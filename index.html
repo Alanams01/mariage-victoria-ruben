@@ -18,6 +18,9 @@
     --rust-deep:#6E2A14;
     --gold:#C9A24B;
     --green:#6B8F5A;
+    --teal:#2E8B84;
+    --red-accent:#C0392B;
+    --navy:#1F3A5F;
     --cream:#FBF3E4;
     --font-script:'Italianno', cursive;
     --font-serif:'EB Garamond', serif;
@@ -37,12 +40,18 @@
   }
   a{color:inherit;}
   button{font-family:inherit; cursor:pointer;}
-  .grain{
-    position:absolute; inset:0;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.05'/></svg>");
-    pointer-events:none;
+  .medallion{
+    width:56px; height:56px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='94' fill='none' stroke='%23C9A24B' stroke-width='1' opacity='0.5'/><polygon points='100.0,12.0 113.8,66.7 162.2,37.8 133.3,86.2 188.0,100.0 133.3,113.8 162.2,162.2 113.8,133.3 100.0,188.0 86.2,133.3 37.8,162.2 66.7,113.8 12.0,100.0 66.7,86.2 37.8,37.8 86.2,66.7' fill='none' stroke='%232E8B84' stroke-width='3'/><polygon points='111.3,43.1 113.3,80.0 148.2,67.8 123.5,95.3 156.9,111.3 120.0,113.3 132.2,148.2 104.7,123.5 88.7,156.9 86.7,120.0 51.8,132.2 76.5,104.7 43.1,88.7 80.0,86.7 67.8,51.8 95.3,76.5' fill='none' stroke='%23C9A24B' stroke-width='2' opacity='0.9'/><circle cx='100' cy='100' r='30' fill='none' stroke='%23C0392B' stroke-width='1.5' opacity='0.75'/><circle cx='100' cy='100' r='6' fill='%231F3A5F'/><circle cx='100' cy='12' r='3.5' fill='%23C0392B'/><circle cx='188' cy='100' r='3.5' fill='%23C0392B'/><circle cx='100' cy='188' r='3.5' fill='%23C0392B'/><circle cx='12' cy='100' r='3.5' fill='%23C0392B'/></svg>");
+    background-size:contain; background-repeat:no-repeat;
+    margin:0 auto;
   }
-
+  .ornament{
+    display:flex; align-items:center; justify-content:center; gap:16px;
+    margin:36px auto; max-width:340px;
+  }
+  .ornament .line{ flex:1; height:1px; background:var(--gold); opacity:0.6; }
+  .ornament .medallion{ width:36px; height:36px; flex-shrink:0; }
   /* ============ COVER ============ */
   #cover{
     position:relative;
@@ -135,7 +144,11 @@
 
   #nav-overlay{
     position:fixed; inset:0; z-index:39;
-    background:var(--parchment);
+    background-color:var(--parchment);
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><polygon points='100.0,12.0 113.8,66.7 162.2,37.8 133.3,86.2 188.0,100.0 133.3,113.8 162.2,162.2 113.8,133.3 100.0,188.0 86.2,133.3 37.8,162.2 66.7,113.8 12.0,100.0 66.7,86.2 37.8,37.8 86.2,66.7' fill='none' stroke='%232E8B84' stroke-width='1.5' opacity='0.5'/><polygon points='111.3,43.1 113.3,80.0 148.2,67.8 123.5,95.3 156.9,111.3 120.0,113.3 132.2,148.2 104.7,123.5 88.7,156.9 86.7,120.0 51.8,132.2 76.5,104.7 43.1,88.7 80.0,86.7 67.8,51.8 95.3,76.5' fill='none' stroke='%23C9A24B' stroke-width='1' opacity='0.5'/></svg>");
+    background-size:520px 520px;
+    background-repeat:no-repeat;
+    background-position:center;
     display:flex; align-items:center; justify-content:center;
     opacity:0; pointer-events:none;
     transition:opacity 0.35s ease;
@@ -193,14 +206,14 @@
   .cd-label{ font-size:0.56rem; letter-spacing:0.06em; color:var(--ink-soft); margin-top:1px; }
 
   /* ============ ILLUSTRATED DESERT BANNER ============ */
-  .desert-banner{
-    width:100%; height:110px;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 220'><path d='M0 170 Q300 110 600 160 T1200 150 L1200 220 L0 220 Z' fill='%23E0BE86' opacity='0.9'/><circle cx='1080' cy='55' r='32' fill='%23C9A24B' opacity='0.55'/><g stroke='%235C3018' stroke-width='6' fill='none' stroke-linecap='round'><path d='M150 200 C144 150 154 110 150 60'/></g><g stroke='%236B8F5A' stroke-width='9' fill='none' stroke-linecap='round'><path d='M150 66 C110 50 90 70 80 54'/><path d='M150 66 C190 50 210 70 220 54'/><path d='M150 66 C140 44 150 26 160 11'/><path d='M150 66 C160 44 148 24 136 10'/></g><g stroke='%235C3018' stroke-width='5' fill='none' stroke-linecap='round'><path d='M990 205 C985 165 993 135 990 95'/></g><g stroke='%236B8F5A' stroke-width='7' fill='none' stroke-linecap='round'><path d='M990 100 C960 88 944 104 936 92'/><path d='M990 100 C1020 88 1036 104 1044 92'/><path d='M990 100 C982 80 990 66 998 54'/></g><path d='M600 210 C595 190 595 175 605 170 C600 155 610 140 620 142 C622 130 635 128 638 142 C648 140 655 150 650 165 C660 165 665 175 660 185 L660 205 L652 205 L652 215 L645 215 L645 205 L610 205 L610 215 L602 215 L602 205 Z' fill='%238B3A1E' opacity='0.8'/><g fill='%23B5502E' opacity='0.7'><rect x='1000' y='150' width='60' height='55' rx='2'/><path d='M1000 150 A30 30 0 0 1 1060 150 Z'/><rect x='1024' y='120' width='12' height='20'/><circle cx='1030' cy='114' r='5'/></g></svg>");
+  .morocco-skyline{
+    width:100%; height:130px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 260'><rect x='0' y='0' width='1200' height='260' fill='none'/><g opacity='0.4' fill='%237EB8D6'><rect x='40' y='90' width='34' height='170'/><polygon points='57,60 74,90 40,90'/><rect x='150' y='60' width='26' height='200'/><rect x='260' y='110' width='30' height='150'/><polygon points='275,80 292,110 258,110'/><rect x='980' y='70' width='28' height='190'/><rect x='1060' y='100' width='24' height='160'/><polygon points='1072,72 1086,100 1058,100'/><rect x='1130' y='50' width='30' height='210'/></g><g opacity='0.6' fill='%234FA0C9'><rect x='330' y='95' width='22' height='165'/><polygon points='341,68 353,95 329,95'/><rect x='860' y='85' width='24' height='175'/><polygon points='872,55 885,85 859,85'/></g><g fill='%23D9A15B'><rect x='420' y='140' width='150' height='120'/><path d='M420 140 A75 75 0 0 1 570 140 Z' fill='%233E7A56'/><rect x='480' y='60' width='30' height='90'/><polygon points='495,20 512,60 478,60' fill='%233E7A56'/><circle cx='495' cy='14' r='6' fill='%23C9A24B'/><rect x='488' y='0' width='14' height='10' fill='%23C9A24B'/></g><g fill='%23C98A4B'><rect x='620' y='170' width='70' height='90'/><path d='M620 170 A35 35 0 0 1 690 170 Z' fill='%232F6E52'/></g><g fill='%23B5502E'><rect x='700' y='120' width='36' height='140'/><polygon points='718,90 736,120 700,120' fill='%232F6E52'/><circle cx='718' cy='80' r='5' fill='%23C9A24B'/></g><g fill='%23D9A15B'><rect x='250' y='165' width='60' height='95'/><path d='M250 165 A30 30 0 0 1 310 165 Z' fill='%233E7A56'/></g><g fill='%23C98A4B'><rect x='900' y='150' width='55' height='110'/><path d='M900 150 A27.5 27.5 0 0 1 955 150 Z' fill='%232F6E52'/><rect x='920' y='95' width='16' height='55'/><polygon points='928,75 940,95 916,95' fill='%232F6E52'/></g><g stroke='%235C3018' stroke-width='6' fill='none' stroke-linecap='round'><path d='M110 260 C104 210 114 170 110 120'/></g><g stroke='%236B8F5A' stroke-width='8' fill='none' stroke-linecap='round'><path d='M110 126 C70 110 50 130 40 114'/><path d='M110 126 C150 110 170 130 180 114'/><path d='M110 126 C100 104 110 86 120 71'/></g><g stroke='%235C3018' stroke-width='5' fill='none' stroke-linecap='round'><path d='M1010 260 C1005 220 1013 190 1010 150'/></g><g stroke='%236B8F5A' stroke-width='7' fill='none' stroke-linecap='round'><path d='M1010 154 C980 142 964 158 956 146'/><path d='M1010 154 C1040 142 1056 158 1064 146'/></g><rect x='0' y='250' width='1200' height='10' fill='%238B3A1E'/></svg>");
     background-size:cover;
     background-repeat:no-repeat;
     background-position:bottom;
   }
-  .desert-banner.flip{ transform:scaleX(-1) scaleY(-1); }
+  .morocco-skyline.flip{ transform:scaleX(-1); }
 
   /* ============ PAGES ============ */
   .page{
@@ -208,7 +221,6 @@
     background:var(--parchment);
     padding:0 0 10px;
   }
-  .page .grain{ z-index:0; }
   .page-inner{
     position:relative; z-index:1;
     max-width:640px; margin:0 auto;
@@ -421,7 +433,6 @@
 
 <!-- ============ PAGE: MAIRIE ============ -->
 <section class="page" id="page-mairie">
-  <div class="grain"></div>
   <div class="page-inner">
     <div class="page-script">Ruben &amp; Victoria</div>
     <div class="page-subscript">Se diront<br>OUI</div>
@@ -436,8 +447,7 @@
 
 <!-- ============ PAGE: BIENVENUE AU MAROC ============ -->
 <section class="page" id="page-bienvenue">
-  <div class="desert-banner"></div>
-  <div class="grain"></div>
+  <div class="morocco-skyline"></div>
   <div class="page-inner">
     <div class="page-script" style="font-size:clamp(2.2rem,9vw,3rem);">Bienvenue au</div>
     <div class="page-script">Maroc</div>
@@ -448,14 +458,13 @@
       À très vite pour des moments inoubliables !
     </div>
   </div>
-  <div class="desert-banner flip"></div>
+  <div class="morocco-skyline flip"></div>
 </section>
 
 <!-- ============ PAGE: HOUPPA ============ -->
 <section class="page" id="page-houppa">
-  <div class="desert-banner"></div>
-  <div class="grain"></div>
-  <div class="page-inner">
+  <div class="page-inner" style="padding-top:56px;">
+    <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Houppa</div>
     <div class="hebrew-line">קול ששון וקול שמחה קול חתן וקול כלה</div>
     <div class="houppa-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
@@ -475,12 +484,10 @@
     <div class="page-place">Fairmont Taghazout Bay</div>
     <a class="itin-btn" target="_blank" href="https://waze.com/ul?q=Fairmont%20Taghazout%20Bay%2C%20Taghazout%2C%20Maroc&navigate=yes">Itinéraire</a>
   </div>
-  <div class="desert-banner flip"></div>
 </section>
 
 <!-- ============ PAGE: PROGRAMME ============ -->
 <section class="page" id="page-programme">
-  <div class="grain"></div>
   <div class="page-inner" style="max-width:640px;">
     <div class="page-script">Programme</div>
     <div class="page-body">Cinq jours au Fairmont Taghazout Bay</div>
@@ -538,7 +545,6 @@
 
 <!-- ============ PAGE: INFOS PRATIQUES ============ -->
 <section class="page" id="page-infos">
-  <div class="grain"></div>
   <div class="page-inner">
     <div class="page-script">Infos pratiques</div>
     <div class="page-place" style="margin-top:24px; font-weight:600;">Fairmont Taghazout Bay</div>
@@ -555,7 +561,6 @@
 
 <!-- ============ PAGE: RSVP ============ -->
 <section class="page" id="page-rsvp">
-  <div class="grain"></div>
   <div class="page-inner" style="max-width:600px;">
     <div class="page-script">Confirmez votre</div>
     <div class="page-script">présence</div>
@@ -612,6 +617,7 @@
   </div>
 </section>
 
+<div class="ornament"><div class="line"></div><div class="medallion"></div><div class="line"></div></div>
 <footer>Ruben &amp; Victoria</footer>
 
 <!-- music -->
