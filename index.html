@@ -65,16 +65,27 @@
   }
   .bg-image{
     position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;
-    filter:brightness(0.42);
-    background:url('photo-couverture.jpg') no-repeat center 30% / cover,
-               linear-gradient(160deg, #C79A63, #8B5A34);
+    background:url('image2.jpg') no-repeat center center / cover;
   }
+  .bg-image::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(20,10,8,0.08) 0%, rgba(20,10,8,0.15) 45%, rgba(15,8,6,0.68) 100%);
+  }
+  .door{
+    position:fixed; top:0; width:50%; height:100vh; z-index:5;
+    background:linear-gradient(180deg, #4A2E1C, #2E1B0F);
+  }
+  .door-left{ left:0; box-shadow:inset -3px 0 0 var(--gold); animation:doorOpenLeft 1.3s cubic-bezier(.77,0,.18,1) 0.35s forwards; }
+  .door-right{ right:0; box-shadow:inset 3px 0 0 var(--gold); animation:doorOpenRight 1.3s cubic-bezier(.77,0,.18,1) 0.35s forwards; }
+  @keyframes doorOpenLeft{ from{transform:translateX(0);} to{transform:translateX(-100%);} }
+  @keyframes doorOpenRight{ from{transform:translateX(0);} to{transform:translateX(100%);} }
   .intro-container{
     position:relative; z-index:1;
     width:100%; padding:0 20px;
     display:flex; flex-direction:column; align-items:center;
     opacity:0;
-    animation:coverFadeIn 1.6s ease-out forwards 0.4s;
+    animation:coverFadeIn 1.3s ease-out forwards 1.5s;
   }
   @keyframes coverFadeIn{ from{opacity:0; transform:translateY(50px);} to{opacity:1; transform:translateY(0);} }
   .names{
@@ -437,6 +448,8 @@
 <!-- ============ COVER ============ -->
 <section id="cover">
   <div class="bg-image"></div>
+  <div class="door door-left"></div>
+  <div class="door door-right"></div>
   <div class="intro-container">
     <h1 class="names">Ruben &amp; Victoria</h1>
     <p class="tagline">Une histoire de mille et une nuits ✨</p>
