@@ -535,16 +535,12 @@
     <div class="hebrew-line">קול ששון וקול שמחה קול חתן וקול כלה</div>
     <div class="houppa-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
     <div class="parents-row">
-      <div>[Prénom] &amp; [Prénom]<br>[Nom de famille du marié]</div>
-      <div>[Prénom] &amp; [Prénom]<br>[Nom de famille de la mariée]</div>
+      <div>Raphaël &amp; Corine<br>Attar</div>
+      <div>Xavier &amp; Véronique<br>Nadjar</div>
     </div>
     <div class="page-body">Ont la joie de vous faire part du mariage de leurs enfants</div>
     <div class="page-script" style="margin-top:10px;">Ruben &amp; Victoria</div>
-    <div class="hebrew-names">
-      <div>[שם בעברית]</div>
-      <div>[שם בעברית]</div>
-    </div>
-    <div class="placeholder-note">Prénoms hébraïques et noms des parents à compléter</div>
+    <div class="placeholder-note">Prénoms hébraïques à compléter</div>
     <div class="page-body" style="margin-top:18px;">Et seraient honorés de votre présence à la cérémonie religieuse qui aura lieu</div>
     <div class="page-date">le jeudi 18 mars 2027<br>à 18h00</div>
     <div class="page-place">Fairmont Taghazout Bay</div>
@@ -763,10 +759,6 @@
       </div>
 
       <div class="field">
-        <label>Allergies / régime alimentaire</label>
-        <input type="text" name="regime" placeholder="Facultatif">
-      </div>
-      <div class="field">
         <label>Un petit mot pour les mariés</label>
         <textarea name="message" placeholder="Facultatif"></textarea>
       </div>
@@ -853,6 +845,25 @@
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }
+
+  /* ---------- Masquer "Nombre de personnes" si "Non avec regrets" ---------- */
+  const rsvpEvents = ['mairie','welcome','houppa','pool','chabbat_soir','chabbat_midi','soiree'];
+  rsvpEvents.forEach(function(name){
+    const radios = document.querySelectorAll('input[name="'+name+'"]');
+    const nbInput = document.querySelector('input[name="'+name+'_nb"]');
+    const nbField = nbInput ? nbInput.closest('.field') : null;
+    function toggleNbField(){
+      const checked = document.querySelector('input[name="'+name+'"]:checked');
+      if(checked && checked.value === 'Non avec regrets'){
+        if(nbField) nbField.style.display = 'none';
+        if(nbInput) nbInput.value = '';
+      } else {
+        if(nbField) nbField.style.display = '';
+      }
+    }
+    radios.forEach(function(r){ r.addEventListener('change', toggleNbField); });
+    toggleNbField();
+  });
 
   /* ---------- RSVP -> Google Sheet via Apps Script ---------- */
   const SCRIPT_URL = 'REMPLACER_PAR_URL_APPS_SCRIPT';
