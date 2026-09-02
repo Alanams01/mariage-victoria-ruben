@@ -257,17 +257,6 @@
   .cd-num{ font-family:var(--font-body); font-weight:700; font-size:1.2rem; color:var(--rust-deep); }
   .cd-label{ font-size:0.56rem; letter-spacing:0.06em; color:var(--ink-soft); margin-top:1px; }
 
-  /* ============ ILLUSTRATED DESERT BANNER ============ */
-  .morocco-skyline{
-    width:100%; height:220px;
-    background-color:var(--parchment-deep);
-    background-image:url('image-tagazout.jpg');
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-  }
-  .morocco-skyline.flip{ transform:scaleX(-1); }
-
   /* ============ PAGES ============ */
   .page{
     position:relative;
@@ -330,7 +319,7 @@
   }
   .divider-soft{ width:56px; height:1px; background:var(--gold); margin:28px auto; opacity:0.8; }
 
-  /* Houppa specific */
+  /* Ceremony blocks (Mairie + Houppa share this look) */
   .hebrew-line{
     font-family:var(--font-serif);
     font-size:1.05rem;
@@ -338,7 +327,7 @@
     direction:rtl;
     margin:18px 0 8px;
   }
-  .houppa-monogram{
+  .ceremony-monogram{
     font-family:var(--font-script);
     font-size:2.4rem;
     color:var(--rust-deep);
@@ -499,11 +488,19 @@
 
 <!-- ============ PAGE: MAIRIE ============ -->
 <section class="page" id="page-mairie">
-  <div class="page-inner">
-    <div class="page-script">Ruben &amp; Victoria</div>
-    <div class="page-subscript">Se diront<br>OUI</div>
+  <div class="page-inner" style="padding-top:56px;">
+    <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
+    <div class="page-script">Mairie</div>
+    <div class="ceremony-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
+    <div class="parents-row">
+      <div>Raphaël &amp; Corine<br>Attar</div>
+      <div>Xavier &amp; Véronique<br>Nadjar</div>
+    </div>
+    <div class="page-body">Ont la joie de vous convier à l'union civile de leurs enfants</div>
+    <div class="page-script" style="margin-top:10px;">Ruben &amp; Victoria</div>
+    <div class="page-body" style="margin-top:18px;">Qui se diront « oui » à la mairie</div>
     <div class="page-date">le jeudi 4 mars 2027<br>à 11h00</div>
-    <div class="page-place">à la Mairie de Neuilly-sur-Seine</div>
+    <div class="page-place">Mairie de Neuilly-sur-Seine</div>
     <div class="page-address">96 avenue Achille-Peretti<br>92200 Neuilly-sur-Seine</div>
     <a class="itin-btn" target="_blank" href="https://waze.com/ul?q=Mairie%20de%20Neuilly-sur-Seine%2C%2096%20avenue%20Achille%20Peretti%2C%2092200%20Neuilly-sur-Seine&navigate=yes">Itinéraire</a>
     <div class="divider-soft"></div>
@@ -513,7 +510,7 @@
 
 <!-- ============ PAGE: BIENVENUE AU MAROC ============ -->
 <section class="page" id="page-bienvenue">
-  <div class="morocco-skyline"></div>
+  <div class="ornament"><div class="line"></div><div class="medallion"></div><div class="line"></div></div>
   <div class="page-inner">
     <div class="page-script" style="font-size:clamp(2.2rem,9vw,3rem);">Bienvenue au</div>
     <div class="page-script">Maroc</div>
@@ -524,7 +521,7 @@
       À très vite pour des moments inoubliables !
     </div>
   </div>
-  <div class="morocco-skyline flip"></div>
+  <div class="ornament"><div class="line"></div><div class="medallion"></div><div class="line"></div></div>
 </section>
 
 <!-- ============ PAGE: HOUPPA ============ -->
@@ -533,7 +530,7 @@
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Houppa</div>
     <div class="hebrew-line">קול ששון וקול שמחה קול חתן וקול כלה</div>
-    <div class="houppa-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
+    <div class="ceremony-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
     <div class="parents-row">
       <div>Raphaël &amp; Corine<br>Attar</div>
       <div>Xavier &amp; Véronique<br>Nadjar</div>
@@ -846,7 +843,7 @@
     URL.revokeObjectURL(url);
   }
 
-  /* ---------- Masquer "Nombre de personnes" si "Non avec regrets" ---------- */
+  /* ---------- RSVP : si "Non avec regrets", le champ nombre de personnes passe et reste a 0 ---------- */
   const rsvpEvents = ['mairie','welcome','houppa','pool','chabbat_soir','chabbat_midi','soiree'];
   rsvpEvents.forEach(function(name){
     const radios = document.querySelectorAll('input[name="'+name+'"]');
@@ -856,9 +853,10 @@
       const checked = document.querySelector('input[name="'+name+'"]:checked');
       if(checked && checked.value === 'Non avec regrets'){
         if(nbField) nbField.style.display = 'none';
-        if(nbInput) nbInput.value = '';
+        if(nbInput) nbInput.value = '0';
       } else {
         if(nbField) nbField.style.display = '';
+        if(nbInput && nbInput.value === '0') nbInput.value = '';
       }
     }
     radios.forEach(function(r){ r.addEventListener('change', toggleNbField); });
@@ -881,6 +879,11 @@
         msg.className = 'rsvp-msg ok';
         msg.textContent = 'Merci ! Votre réponse a bien été enregistrée ✨';
         form.reset();
+        rsvpEvents.forEach(function(name){
+          const nbInput = document.querySelector('input[name="'+name+'_nb"]');
+          const nbField = nbInput ? nbInput.closest('.field') : null;
+          if(nbField) nbField.style.display = '';
+        });
       })
       .catch(()=>{
         msg.className = 'rsvp-msg err';
