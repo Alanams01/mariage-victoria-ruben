@@ -4,24 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ruben & Victoria — 18 Mars 2027</title>
+<meta name="description" content="Ruben & Victoria se marient à Taghazout. Retrouvez ici toutes les informations pour le mariage et votre séjour.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italianno&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --parchment:#E3C89A;
-    --parchment-light:#241B12;
-    --parchment-deep:#17110B;
-    --ink:#3B2712;
-    --ink-soft:#7C6440;
-    --rust:#C1793C;
-    --rust-deep:#8B4E1E;
-    --gold:#C9A24B;
-    --green:#7C8A4E;
-    --teal:#C9A24B;
-    --red-accent:#9C4A30;
-    --navy:#C9A24B;
-    --cream:#F8ECD3;
+    --parchment:#F5ECEA;
+    --parchment-light:#2B2530;
+    --parchment-deep:#1C1721;
+    --ink:#4B3E49;
+    --ink-soft:#8C7F8C;
+    --rust:#C9A0AE;
+    --rust-deep:#9C6F84;
+    --gold:#D9CDBE;
+    --green:#93A89B;
+    --red-accent:#B0707A;
+    --cream:#FBF5F2;
     --font-script:'Italianno', cursive;
     --font-serif:'EB Garamond', serif;
     --font-body:'Jost', sans-serif;
@@ -42,7 +41,7 @@
   button{font-family:inherit; cursor:pointer;}
   .medallion{
     width:56px; height:56px;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='94' fill='none' stroke='%23D2A54C' stroke-width='1' opacity='0.5'/><polygon points='100.0,12.0 113.8,66.7 162.2,37.8 133.3,86.2 188.0,100.0 133.3,113.8 162.2,162.2 113.8,133.3 100.0,188.0 86.2,133.3 37.8,162.2 66.7,113.8 12.0,100.0 66.7,86.2 37.8,37.8 86.2,66.7' fill='none' stroke='%23C9A24B' stroke-width='3'/><polygon points='111.3,43.1 113.3,80.0 148.2,67.8 123.5,95.3 156.9,111.3 120.0,113.3 132.2,148.2 104.7,123.5 88.7,156.9 86.7,120.0 51.8,132.2 76.5,104.7 43.1,88.7 80.0,86.7 67.8,51.8 95.3,76.5' fill='none' stroke='%23D2A54C' stroke-width='2' opacity='0.9'/><circle cx='100' cy='100' r='30' fill='none' stroke='%239C4A30' stroke-width='1.5' opacity='0.75'/><circle cx='100' cy='100' r='6' fill='%23D2A54C'/><circle cx='100' cy='12' r='3.5' fill='%239C4A30'/><circle cx='188' cy='100' r='3.5' fill='%239C4A30'/><circle cx='100' cy='188' r='3.5' fill='%239C4A30'/><circle cx='12' cy='100' r='3.5' fill='%239C4A30'/></svg>");
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='94' fill='none' stroke='%23D9CDBE' stroke-width='1' opacity='0.5'/><polygon points='100.0,12.0 113.8,66.7 162.2,37.8 133.3,86.2 188.0,100.0 133.3,113.8 162.2,162.2 113.8,133.3 100.0,188.0 86.2,133.3 37.8,162.2 66.7,113.8 12.0,100.0 66.7,86.2 37.8,37.8 86.2,66.7' fill='none' stroke='%23C7A0B0' stroke-width='3'/><polygon points='111.3,43.1 113.3,80.0 148.2,67.8 123.5,95.3 156.9,111.3 120.0,113.3 132.2,148.2 104.7,123.5 88.7,156.9 86.7,120.0 51.8,132.2 76.5,104.7 43.1,88.7 80.0,86.7 67.8,51.8 95.3,76.5' fill='none' stroke='%23D9CDBE' stroke-width='2' opacity='0.9'/><circle cx='100' cy='100' r='30' fill='none' stroke='%23B0708A' stroke-width='1.5' opacity='0.75'/><circle cx='100' cy='100' r='6' fill='%23D9CDBE'/><circle cx='100' cy='12' r='3.5' fill='%23B0708A'/><circle cx='188' cy='100' r='3.5' fill='%23B0708A'/><circle cx='100' cy='188' r='3.5' fill='%23B0708A'/><circle cx='12' cy='100' r='3.5' fill='%23B0708A'/></svg>");
     background-size:contain; background-repeat:no-repeat;
     margin:0 auto;
   }
@@ -52,6 +51,7 @@
   }
   .ornament .line{ flex:1; height:1px; background:var(--gold); opacity:0.6; }
   .ornament .medallion{ width:36px; height:36px; flex-shrink:0; }
+
   /* ============ COVER ============ */
   #cover{
     position:relative;
@@ -70,11 +70,11 @@
   .bg-image::after{
     content:"";
     position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(20,10,8,0.08) 0%, rgba(20,10,8,0.15) 45%, rgba(15,8,6,0.68) 100%);
+    background:linear-gradient(180deg, rgba(28,22,32,0.10) 0%, rgba(28,22,32,0.18) 45%, rgba(22,17,26,0.68) 100%);
   }
   .door{
     position:fixed; top:0; width:50%; height:100vh; z-index:5;
-    background:linear-gradient(180deg, #4A2E1C, #2E1B0F);
+    background:linear-gradient(180deg, #3A3240, #211C28);
   }
   .door-left{ left:0; box-shadow:inset -3px 0 0 var(--gold); animation:doorOpenLeft 1.3s cubic-bezier(.77,0,.18,1) 0.35s forwards; }
   .door-right{ right:0; box-shadow:inset 3px 0 0 var(--gold); animation:doorOpenRight 1.3s cubic-bezier(.77,0,.18,1) 0.35s forwards; }
@@ -146,7 +146,7 @@
     font-size:0.9rem;
     text-transform:uppercase;
     border-radius:50px;
-    box-shadow:0 15px 35px rgba(139,41,66,0.55);
+    box-shadow:0 15px 35px rgba(156,111,132,0.5);
     position:relative;
     overflow:hidden;
   }
@@ -160,64 +160,58 @@
   }
   @keyframes shine{ 0%{left:-60%;} 25%{left:120%;} 100%{left:120%;} }
 
-  /* ============ HEADER (monogram + burger) ============ */
+  /* ============ HEADER + TAB BAR (top right) ============ */
   #site-header{
     position:sticky; top:0; z-index:40;
     display:flex; align-items:center; justify-content:space-between;
-    padding:18px 6vw;
-    background:rgba(23,17,11,0.92);
+    gap:14px;
+    padding:14px 4vw;
+    background:rgba(23,17,11,0.94);
     backdrop-filter:blur(6px);
-    border-bottom:1px solid rgba(210,165,76,0.25);
+    border-bottom:1px solid rgba(217,205,190,0.3);
   }
   .monogram{
     font-family:var(--font-script);
     font-size:2rem;
     color:var(--gold);
     line-height:1;
-    position:relative;
+    flex-shrink:0;
   }
   .monogram span:last-child{ margin-left:-0.55em; opacity:0.65; }
-  #burger{
-    width:30px; height:22px;
-    position:relative;
-    background:none; border:none;
-  }
-  #burger span{
-    position:absolute; left:0; width:100%; height:2px;
-    background:var(--gold); border-radius:2px;
-    transition:transform 0.3s ease, opacity 0.3s ease;
-  }
-  #burger span:nth-child(1){ top:0; }
-  #burger span:nth-child(2){ top:10px; }
-  #burger span:nth-child(3){ top:20px; }
-  #burger.open span:nth-child(1){ transform:translateY(10px) rotate(45deg); }
-  #burger.open span:nth-child(2){ opacity:0; }
-  #burger.open span:nth-child(3){ transform:translateY(-10px) rotate(-45deg); }
 
-  #nav-overlay{
-    position:fixed; inset:0; z-index:39;
-    background-color:var(--parchment);
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><polygon points='100.0,12.0 113.8,66.7 162.2,37.8 133.3,86.2 188.0,100.0 133.3,113.8 162.2,162.2 113.8,133.3 100.0,188.0 86.2,133.3 37.8,162.2 66.7,113.8 12.0,100.0 66.7,86.2 37.8,37.8 86.2,66.7' fill='none' stroke='%23C9A24B' stroke-width='1.5' opacity='0.5'/><polygon points='111.3,43.1 113.3,80.0 148.2,67.8 123.5,95.3 156.9,111.3 120.0,113.3 132.2,148.2 104.7,123.5 88.7,156.9 86.7,120.0 51.8,132.2 76.5,104.7 43.1,88.7 80.0,86.7 67.8,51.8 95.3,76.5' fill='none' stroke='%23D2A54C' stroke-width='1' opacity='0.5'/></svg>");
-    background-size:520px 520px;
-    background-repeat:no-repeat;
-    background-position:center;
-    display:flex; align-items:center; justify-content:center;
-    opacity:0; pointer-events:none;
-    transition:opacity 0.35s ease;
+  #tab-nav{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    justify-content:flex-end;
+    mask-image:linear-gradient(to right, transparent 0, #000 18px, #000 100%);
   }
-  #nav-overlay.open{ opacity:1; pointer-events:auto; }
-  #nav-overlay ul{ list-style:none; text-align:center; }
-  #nav-overlay li{ margin:20px 0; }
-  #nav-overlay a{
+  #tab-nav::-webkit-scrollbar{ display:none; }
+  #tab-nav a{
+    flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px solid rgba(217,205,190,0.4);
+    background:transparent;
+    color:var(--cream);
+    text-decoration:none;
     font-family:var(--font-body);
     font-weight:500;
-    letter-spacing:0.16em;
-    font-size:0.95rem;
-    text-decoration:none;
-    color:var(--ink);
+    font-size:0.72rem;
+    letter-spacing:0.06em;
     text-transform:uppercase;
+    white-space:nowrap;
+    transition:background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   }
-  #nav-overlay a:hover{ color:var(--rust-deep); }
+  #tab-nav a.active, #tab-nav a:hover{
+    background:var(--gold);
+    color:var(--parchment-deep);
+    border-color:var(--gold);
+  }
 
   /* ============ COUNTDOWN / ARCH ============ */
   #countdown-page{
@@ -233,7 +227,7 @@
     margin:0 auto;
     border-radius:50% 50% 6px 6px / 30% 30% 6px 6px;
     background:url('photo-arche.jpeg') center / cover no-repeat,
-               linear-gradient(160deg, #4A3320, #241B12);
+               linear-gradient(160deg, #3A3240, #1C1720);
     box-shadow:0 20px 50px rgba(8,10,22,0.45);
     overflow:visible;
   }
@@ -262,6 +256,7 @@
     position:relative;
     background:var(--parchment);
     padding:0 0 10px;
+    scroll-margin-top:80px;
   }
   .page-inner{
     position:relative; z-index:1;
@@ -274,12 +269,6 @@
     font-size:clamp(2.6rem, 10vw, 3.8rem);
     color:var(--rust-deep);
     line-height:1;
-  }
-  .page-subscript{
-    font-family:var(--font-script);
-    font-size:clamp(1.8rem, 6vw, 2.3rem);
-    color:var(--rust-deep);
-    margin-top:6px;
   }
   .page-body{
     font-family:var(--font-serif);
@@ -340,17 +329,12 @@
     font-size:0.92rem;
     color:var(--ink-soft);
   }
-  .hebrew-names{
-    display:flex; justify-content:space-between;
-    margin-top:8px; font-size:1.1rem; direction:rtl;
-    font-family:var(--font-serif); color:var(--ink);
-  }
   .placeholder-note{
     margin-top:10px;
     font-size:0.72rem;
     color:var(--ink-soft);
     font-style:italic;
-    opacity:0.7;
+    opacity:0.75;
   }
 
   /* Timeline (Programme) */
@@ -377,7 +361,7 @@
   }
 
   .info-list{ text-align:left; margin-top:10px; }
-  .info-list li{ list-style:none; padding:10px 0; border-bottom:1px dashed rgba(210,165,76,0.22); color:var(--ink-soft); font-size:0.92rem; line-height:1.5; }
+  .info-list li{ list-style:none; padding:10px 0; border-bottom:1px dashed rgba(217,205,190,0.25); color:var(--ink-soft); font-size:0.92rem; line-height:1.5; }
   .info-list li b{ color:var(--ink); font-weight:600; }
 
   /* RSVP */
@@ -396,7 +380,7 @@
   .radio-opt{ display:flex; align-items:center; gap:7px; font-family:var(--font-serif); font-size:0.95rem; }
   .radio-opt input{ accent-color:var(--rust); width:16px; height:16px; }
   .event-block{
-    border:1px solid rgba(210,165,76,0.22); border-radius:10px;
+    border:1px solid rgba(217,205,190,0.25); border-radius:10px;
     padding:18px 18px 4px; margin-bottom:22px; background:var(--parchment-light);
   }
   .event-block h4{ font-family:var(--font-serif); font-weight:600; color:var(--gold); margin-bottom:2px; font-size:1.02rem; }
@@ -426,12 +410,14 @@
   }
   #music-toggle svg{ width:20px; height:20px; color:var(--rust-deep); }
   #music-toggle.playing{ animation:pulse 2.2s ease-in-out infinite; }
-  @keyframes pulse{ 0%,100%{box-shadow:0 6px 18px rgba(0,0,0,0.18);} 50%{box-shadow:0 6px 22px rgba(139,41,66,0.45);} }
+  @keyframes pulse{ 0%,100%{box-shadow:0 6px 18px rgba(0,0,0,0.18);} 50%{box-shadow:0 6px 22px rgba(156,111,132,0.45);} }
 
   @media (max-width:480px){
     .row-2{ flex-direction:column; gap:0; }
     .parents-row{ flex-direction:column; gap:6px; text-align:center; }
-    .hebrew-names{ flex-direction:column; gap:4px; text-align:center; }
+    #site-header{ padding:12px 3vw; }
+    .monogram{ font-size:1.6rem; }
+    #tab-nav a{ padding:7px 11px; font-size:0.66rem; }
   }
 </style>
 </head>
@@ -458,22 +444,19 @@
   </div>
 </section>
 
-<!-- ============ HEADER ============ -->
+<!-- ============ HEADER + TAB NAV (top right) ============ -->
 <header id="site-header">
   <div class="monogram"><span>R</span><span>V</span></div>
-  <button id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav id="tab-nav">
+    <a href="#page-mairie" data-section="page-mairie">Mairie</a>
+    <a href="#page-houppa" data-section="page-houppa">Houppa</a>
+    <a href="#page-programme" data-section="page-programme">Programme</a>
+    <a href="#page-pool" data-section="page-pool">Pool Party</a>
+    <a href="#page-chabbat" data-section="page-chabbat">Chabbat</a>
+    <a href="#page-infos" data-section="page-infos">Infos</a>
+    <a href="#page-rsvp" data-section="page-rsvp">Réponses</a>
+  </nav>
 </header>
-
-<nav id="nav-overlay">
-  <ul>
-    <li><a href="#page-mairie">Mairie</a></li>
-    <li><a href="#page-bienvenue">Bienvenue au Maroc</a></li>
-    <li><a href="#page-houppa">Houppa</a></li>
-    <li><a href="#page-programme">Programme</a></li>
-    <li><a href="#page-infos">Infos pratiques</a></li>
-    <li><a href="#page-rsvp">Réponses</a></li>
-  </ul>
-</nav>
 
 <!-- ============ COUNTDOWN / ARCH ============ -->
 <section id="countdown-page">
@@ -491,11 +474,12 @@
   <div class="page-inner" style="padding-top:56px;">
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Mairie</div>
-    <div class="ceremony-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
+    <div class="ceremony-monogram"><span>K</span><span style="margin-left:-0.5em; opacity:0.65;">Z</span></div>
     <div class="parents-row">
-      <div>Raphaël &amp; Corine<br>Attar</div>
-      <div>Xavier &amp; Véronique<br>Nadjar</div>
+      <div>[Prénom &amp; Prénom]<br>[Nom de famille]</div>
+      <div>[Prénom &amp; Prénom]<br>[Nom de famille]</div>
     </div>
+    <div class="placeholder-note">✏️ Remplacez par les noms des parents</div>
     <div class="page-body">Ont la joie de vous convier à l'union civile de leurs enfants</div>
     <div class="page-script" style="margin-top:10px;">Ruben &amp; Victoria</div>
     <div class="page-body" style="margin-top:18px;">Qui se diront « oui » à la mairie</div>
@@ -529,16 +513,16 @@
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Houppa</div>
     <div class="hebrew-line">קול ששון וקול שמחה קול חתן וקול כלה</div>
-    <div class="ceremony-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
+    <div class="ceremony-monogram"><span>K</span><span style="margin-left:-0.5em; opacity:0.65;">Z</span></div>
     <div class="parents-row">
-      <div>Raphaël &amp; Corine<br>Attar</div>
-      <div>Xavier &amp; Véronique<br>Nadjar</div>
+      <div>[Prénom &amp; Prénom]<br>[Nom de famille]</div>
+      <div>[Prénom &amp; Prénom]<br>[Nom de famille]</div>
     </div>
+    <div class="placeholder-note">✏️ Remplacez par les noms des parents</div>
     <div class="page-body">Ont la joie de vous faire part du mariage de leurs enfants</div>
     <div class="page-script" style="margin-top:10px;">Ruben &amp; Victoria</div>
-    <div class="hebrew-names"><div>ראובן</div><div>אסתר</div></div>
     <div class="page-body" style="margin-top:18px;">Et seraient honorés de votre présence à la cérémonie religieuse qui aura lieu</div>
-    <div class="page-date">le jeudi 18 mars 2027<br>à 18h00</div>
+    <div class="page-date">le jeudi 18 mars 2027<br>à 17h00</div>
     <div class="page-place">Fairmont Taghazout Bay</div>
     <a class="itin-btn" target="_blank" href="https://waze.com/ul?q=Fairmont%20Taghazout%20Bay%2C%20Taghazout%2C%20Maroc&navigate=yes">Itinéraire</a>
   </div>
@@ -554,10 +538,19 @@
       <div class="t-item">
         <div class="t-badge"><div class="d">17</div><div class="m">MARS</div></div>
         <div class="t-day">Mercredi soir</div>
-        <div class="t-title">Welcome Dinner</div>
-        <div class="t-desc">Premier dîner tous ensemble pour ouvrir la semaine.</div>
+        <div class="t-title">Soirée Femmes</div>
+        <div class="t-desc">Une soirée entre femmes pour ouvrir la semaine tout en douceur.</div>
         <div class="t-actions">
-          <button class="btn-mini" onclick="addToCalendar('Welcome Dinner — Ruben & Victoria','Dîner de bienvenue, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270317T200000','20270317T230000')">📅 Bloquer la date</button>
+          <button class="btn-mini" onclick="addToCalendar('Soirée Femmes — Ruben & Victoria','Soirée Femmes, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270317T200000','20270317T230000')">📅 Bloquer la date</button>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-badge"><div class="d">17</div><div class="m">MARS</div></div>
+        <div class="t-day">Mercredi soir</div>
+        <div class="t-title">Soirée Hommes</div>
+        <div class="t-desc">Une soirée entre hommes pour ouvrir la semaine tout en douceur.</div>
+        <div class="t-actions">
+          <button class="btn-mini" onclick="addToCalendar('Soirée Hommes — Ruben & Victoria','Soirée Hommes, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270317T200000','20270317T230000')">📅 Bloquer la date</button>
         </div>
       </div>
       <div class="t-item">
@@ -567,25 +560,25 @@
         <div class="t-desc">Le grand jour — Ruben et Victoria se diront « oui » sous la Houppa, suivi de la soirée de mariage.</div>
         <div class="t-actions">
           <a class="btn-mini" target="_blank" href="https://waze.com/ul?q=Fairmont%20Taghazout%20Bay%2C%20Taghazout%2C%20Maroc&navigate=yes">🚗 Waze</a>
-          <button class="btn-mini" onclick="addToCalendar('Houppa — Ruben & Victoria','Cérémonie religieuse et soirée de mariage, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270318T180000','20270318T235900')">📅 Bloquer la date</button>
+          <button class="btn-mini" onclick="addToCalendar('Houppa — Ruben & Victoria','Cérémonie religieuse et soirée de mariage, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270318T170000','20270318T235900')">📅 Bloquer la date</button>
         </div>
       </div>
-      <div class="t-item">
+      <div class="t-item" id="page-pool">
         <div class="t-badge"><div class="d">19</div><div class="m">MARS</div></div>
-        <div class="t-day">Vendredi après-midi</div>
+        <div class="t-day">Vendredi</div>
         <div class="t-title">Pool Party</div>
         <div class="t-desc">Farniente, musique et cocktails au bord de la piscine.</div>
         <div class="t-actions">
-          <button class="btn-mini" onclick="addToCalendar('Pool Party — Ruben & Victoria','Pool Party, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270319T140000','20270319T180000')">📅 Bloquer la date</button>
+          <button class="btn-mini" onclick="addToCalendar('Pool Party — Ruben & Victoria','Pool Party, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270319T130000','20270319T170000')">📅 Bloquer la date</button>
         </div>
       </div>
-      <div class="t-item">
+      <div class="t-item" id="page-chabbat">
         <div class="t-badge"><div class="d">19</div><div class="m">MARS</div></div>
         <div class="t-day">Vendredi soir</div>
-        <div class="t-title">Chabbat Hatan</div>
-        <div class="t-desc">Un chabbat en l'honneur du marié, dans la douceur et la tradition.</div>
+        <div class="t-title">Kabbalat Chabbat</div>
+        <div class="t-desc">L'entrée dans le chabbat, dans la douceur et la tradition.</div>
         <div class="t-actions">
-          <button class="btn-mini" onclick="addToCalendar('Chabbat Hatan — Ruben & Victoria','Chabbat Hatan, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270319T190000','20270319T220000')">📅 Bloquer la date</button>
+          <button class="btn-mini" onclick="addToCalendar('Kabbalat Chabbat — Ruben & Victoria','Kabbalat Chabbat, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270319T183000','20270319T210000')">📅 Bloquer la date</button>
         </div>
       </div>
       <div class="t-item">
@@ -594,16 +587,16 @@
         <div class="t-title">Déjeuner de Chabbat</div>
         <div class="t-desc">Un déjeuner convivial et sans façon, dans la continuité du Chabbat.</div>
         <div class="t-actions">
-          <button class="btn-mini" onclick="addToCalendar('Déjeuner de Chabbat — Ruben & Victoria','Déjeuner de Chabbat, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270320T130000','20270320T153000')">📅 Bloquer la date</button>
+          <button class="btn-mini" onclick="addToCalendar('Déjeuner de Chabbat — Ruben & Victoria','Déjeuner de Chabbat, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270320T123000','20270320T150000')">📅 Bloquer la date</button>
         </div>
       </div>
       <div class="t-item">
         <div class="t-badge"><div class="d">20</div><div class="m">MARS</div></div>
         <div class="t-day">Samedi soir</div>
-        <div class="t-title">Soirée italienne</div>
-        <div class="t-desc">La grande clôture, en dolce vita — pour finir la semaine en beauté.</div>
+        <div class="t-title">Soirée de clôture</div>
+        <div class="t-desc">La grande soirée finale, pour clôturer la semaine en beauté.</div>
         <div class="t-actions">
-          <button class="btn-mini" onclick="addToCalendar('Soirée italienne — Ruben & Victoria','Soirée italienne, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270320T200000','20270320T235900')">📅 Bloquer la date</button>
+          <button class="btn-mini" onclick="addToCalendar('Soirée de clôture — Ruben & Victoria','Soirée de clôture, Fairmont Taghazout Bay','Fairmont Taghazout Bay, Taghazout, Maroc','20270320T213000','20270320T235900')">📅 Bloquer la date</button>
         </div>
       </div>
     </div>
@@ -620,7 +613,7 @@
     <ul class="info-list">
       <li><b>Aéroport :</b> Agadir–Al Massira (AGA), à environ 30 minutes de l'hôtel.</li>
       <li><b>Sur place :</b> quatre jours au Fairmont Taghazout Bay, du 17 au 20 mars 2027.</li>
-      <li><b>À prévoir :</b> tenue légère pour la Pool Party, tenue chic pour la Houppa, et une touche de dolce vita pour la soirée italienne.</li>
+      <li><b>À prévoir :</b> tenue légère pour la Pool Party, tenue chic pour la Houppa, et tenue de fête pour la soirée de clôture.</li>
       <li><b>Climat :</b> printemps doux et ensoleillé sur la côte atlantique — prévoyez un lainage pour le soir.</li>
     </ul>
   </div>
@@ -659,24 +652,40 @@
       <div class="rsvp-section-title">Maroc — Taghazout Bay</div>
 
       <div class="event-block">
-        <h4>Welcome Dinner</h4>
-        <span class="event-sub">Mercredi 17 mars 2027 — soir</span>
+        <h4>Soirée Femmes</h4>
+        <span class="event-sub">Mercredi 17 mars 2027 — 20h00</span>
         <div class="field">
           <label>Présence *</label>
           <div class="radio-row">
-            <label class="radio-opt"><input type="radio" name="welcome" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="welcome" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="soiree_femmes" value="Oui" required> Oui</label>
+            <label class="radio-opt"><input type="radio" name="soiree_femmes" value="Non avec regrets"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="welcome_nb" min="0">
+          <input type="number" name="soiree_femmes_nb" min="0">
+        </div>
+      </div>
+
+      <div class="event-block">
+        <h4>Soirée Hommes</h4>
+        <span class="event-sub">Mercredi 17 mars 2027 — 20h00</span>
+        <div class="field">
+          <label>Présence *</label>
+          <div class="radio-row">
+            <label class="radio-opt"><input type="radio" name="soiree_hommes" value="Oui" required> Oui</label>
+            <label class="radio-opt"><input type="radio" name="soiree_hommes" value="Non avec regrets"> Non avec regrets</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Nombre de personnes</label>
+          <input type="number" name="soiree_hommes_nb" min="0">
         </div>
       </div>
 
       <div class="event-block">
         <h4>Houppa &amp; soirée de mariage</h4>
-        <span class="event-sub">Jeudi 18 mars 2027 — 18h00</span>
+        <span class="event-sub">Jeudi 18 mars 2027 — 17h00</span>
         <div class="field">
           <label>Présence *</label>
           <div class="radio-row">
@@ -692,7 +701,7 @@
 
       <div class="event-block">
         <h4>Pool Party</h4>
-        <span class="event-sub">Vendredi 19 mars 2027 — après-midi</span>
+        <span class="event-sub">Vendredi 19 mars 2027 — 13h00</span>
         <div class="field">
           <label>Présence *</label>
           <div class="radio-row">
@@ -707,24 +716,24 @@
       </div>
 
       <div class="event-block">
-        <h4>Chabbat Hatan</h4>
-        <span class="event-sub">Vendredi 19 mars 2027 — soir</span>
+        <h4>Kabbalat Chabbat</h4>
+        <span class="event-sub">Vendredi 19 mars 2027 — 18h30</span>
         <div class="field">
           <label>Présence *</label>
           <div class="radio-row">
-            <label class="radio-opt"><input type="radio" name="chabbat_soir" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="chabbat_soir" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="kabbalat" value="Oui" required> Oui</label>
+            <label class="radio-opt"><input type="radio" name="kabbalat" value="Non avec regrets"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="chabbat_soir_nb" min="0">
+          <input type="number" name="kabbalat_nb" min="0">
         </div>
       </div>
 
       <div class="event-block">
         <h4>Déjeuner de Chabbat</h4>
-        <span class="event-sub">Samedi 20 mars 2027 — midi</span>
+        <span class="event-sub">Samedi 20 mars 2027 — 12h30</span>
         <div class="field">
           <label>Présence *</label>
           <div class="radio-row">
@@ -739,18 +748,18 @@
       </div>
 
       <div class="event-block">
-        <h4>Soirée italienne</h4>
-        <span class="event-sub">Samedi 20 mars 2027 — soir</span>
+        <h4>Soirée de clôture</h4>
+        <span class="event-sub">Samedi 20 mars 2027 — 21h30</span>
         <div class="field">
           <label>Présence *</label>
           <div class="radio-row">
-            <label class="radio-opt"><input type="radio" name="soiree" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="soiree" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="cloture" value="Oui" required> Oui</label>
+            <label class="radio-opt"><input type="radio" name="cloture" value="Non avec regrets"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="soiree_nb" min="0">
+          <input type="number" name="cloture_nb" min="0">
         </div>
       </div>
 
@@ -781,22 +790,28 @@
 </button>
 
 <script>
-  /* ---------- Burger nav ---------- */
-  const burger = document.getElementById('burger');
-  const overlay = document.getElementById('nav-overlay');
-  burger.addEventListener('click', ()=>{
-    burger.classList.toggle('open');
-    overlay.classList.toggle('open');
-  });
-  overlay.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click', ()=>{
-      burger.classList.remove('open');
-      overlay.classList.remove('open');
-    });
-  });
+  /* ---------- Tab nav : scroll fluide + état actif au scroll ---------- */
+  const tabLinks = document.querySelectorAll('#tab-nav a');
+  const sections = Array.from(tabLinks).map(a=>document.getElementById(a.dataset.section)).filter(Boolean);
 
-  /* ---------- Countdown : cible Houppa, 18 mars 2027 18h00 (heure de Paris) ---------- */
-  const targetDate = new Date('2027-03-18T18:00:00+01:00').getTime();
+  if('IntersectionObserver' in window){
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          tabLinks.forEach(a=>a.classList.remove('active'));
+          const link = document.querySelector('#tab-nav a[data-section="'+entry.target.id+'"]');
+          if(link){
+            link.classList.add('active');
+            link.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+          }
+        }
+      });
+    }, { rootMargin:'-45% 0px -45% 0px', threshold:0 });
+    sections.forEach(sec=>observer.observe(sec));
+  }
+
+  /* ---------- Countdown : cible Houppa, 18 mars 2027 17h00 (heure de Paris/Maroc) ---------- */
+  const targetDate = new Date('2027-03-18T17:00:00+01:00').getTime();
   function setText(id, value){
     const el = document.getElementById(id);
     if(el) el.textContent = String(value).padStart(2,'0');
@@ -842,8 +857,8 @@
     URL.revokeObjectURL(url);
   }
 
-  /* ---------- RSVP : si "Non avec regrets", le champ nombre de personnes passe et reste a 0 ---------- */
-  const rsvpEvents = ['mairie','welcome','houppa','pool','chabbat_soir','chabbat_midi','soiree'];
+  /* ---------- RSVP : si "Non avec regrets", le champ nombre de personnes se cache et reste à 0 ---------- */
+  const rsvpEvents = ['mairie','soiree_femmes','soiree_hommes','houppa','pool','kabbalat','chabbat_midi','cloture'];
   rsvpEvents.forEach(function(name){
     const radios = document.querySelectorAll('input[name="'+name+'"]');
     const nbInput = document.querySelector('input[name="'+name+'_nb"]');
