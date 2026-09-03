@@ -910,21 +910,33 @@
   const musicBtn = document.getElementById('music-toggle');
   const iconPlay = document.getElementById('icon-play');
   const iconPause = document.getElementById('icon-pause');
+  const ctaBtn = document.querySelector('#cover .cta');
   let playing = false;
-  musicBtn.addEventListener('click', ()=>{
-    if(!playing){
-      bgm.play().catch(()=>{});
+
+  function startMusic(){
+    if(playing) return;
+    bgm.play().then(()=>{
       playing = true;
       musicBtn.classList.add('playing');
       iconPlay.style.display = 'none';
       iconPause.style.display = 'block';
-    } else {
-      bgm.pause();
-      playing = false;
-      musicBtn.classList.remove('playing');
-      iconPlay.style.display = 'block';
-      iconPause.style.display = 'none';
-    }
+    }).catch(()=>{});
+  }
+  function pauseMusic(){
+    bgm.pause();
+    playing = false;
+    musicBtn.classList.remove('playing');
+    iconPlay.style.display = 'block';
+    iconPause.style.display = 'none';
+  }
+
+  // Lance la musique directement au clic sur "Voir l'invitation"
+  if(ctaBtn){
+    ctaBtn.addEventListener('click', startMusic);
+  }
+
+  musicBtn.addEventListener('click', ()=>{
+    if(!playing){ startMusic(); } else { pauseMusic(); }
   });
 </script>
 </body>
