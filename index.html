@@ -329,6 +329,11 @@
     font-size:0.92rem;
     color:var(--ink-soft);
   }
+  .hebrew-names{
+    display:flex; justify-content:space-between;
+    margin-top:8px; font-size:1.1rem; direction:rtl;
+    font-family:var(--font-serif); color:var(--ink);
+  }
   .placeholder-note{
     margin-top:10px;
     font-size:0.72rem;
@@ -415,6 +420,7 @@
   @media (max-width:480px){
     .row-2{ flex-direction:column; gap:0; }
     .parents-row{ flex-direction:column; gap:6px; text-align:center; }
+    .hebrew-names{ flex-direction:column; gap:4px; text-align:center; }
     #site-header{ padding:12px 3vw; }
     .monogram{ font-size:1.6rem; }
     #tab-nav a{ padding:7px 11px; font-size:0.66rem; }
@@ -474,12 +480,7 @@
   <div class="page-inner" style="padding-top:56px;">
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Mairie</div>
-    <div class="ceremony-monogram"><span>K</span><span style="margin-left:-0.5em; opacity:0.65;">Z</span></div>
-    <div class="parents-row">
-      <div>[Prénom &amp; Prénom]<br>[Nom de famille]</div>
-      <div>[Prénom &amp; Prénom]<br>[Nom de famille]</div>
-    </div>
-    <div class="placeholder-note">✏️ Remplacez par les noms des parents</div>
+    <div class="ceremony-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
     <div class="page-body">Ont la joie de vous convier à l'union civile de leurs enfants</div>
     <div class="page-script" style="margin-top:10px;">Ruben &amp; Victoria</div>
     <div class="page-body" style="margin-top:18px;">Qui se diront « oui » à la mairie</div>
@@ -513,14 +514,14 @@
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Houppa</div>
     <div class="hebrew-line">קול ששון וקול שמחה קול חתן וקול כלה</div>
-    <div class="ceremony-monogram"><span>K</span><span style="margin-left:-0.5em; opacity:0.65;">Z</span></div>
+    <div class="ceremony-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
     <div class="parents-row">
-      <div>[Prénom &amp; Prénom]<br>[Nom de famille]</div>
-      <div>[Prénom &amp; Prénom]<br>[Nom de famille]</div>
+      <div>Raphaël &amp; Corine<br>Attar</div>
+      <div>Xavier &amp; Véronique<br>Nadjar</div>
     </div>
-    <div class="placeholder-note">✏️ Remplacez par les noms des parents</div>
     <div class="page-body">Ont la joie de vous faire part du mariage de leurs enfants</div>
     <div class="page-script" style="margin-top:10px;">Ruben &amp; Victoria</div>
+    <div class="hebrew-names"><div>ראובן</div><div>אסתר</div></div>
     <div class="page-body" style="margin-top:18px;">Et seraient honorés de votre présence à la cérémonie religieuse qui aura lieu</div>
     <div class="page-date">le jeudi 18 mars 2027<br>à 17h00</div>
     <div class="page-place">Fairmont Taghazout Bay</div>
