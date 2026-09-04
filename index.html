@@ -355,6 +355,7 @@
   .t-badge .d{ font-weight:700; font-size:1.05rem; line-height:1; }
   .t-badge .m{ font-size:0.5rem; letter-spacing:0.05em; color:var(--ink-soft); }
   .t-day{ font-size:0.7rem; letter-spacing:0.12em; color:var(--ink-soft); font-weight:600; text-transform:uppercase; }
+  .t-time{ font-size:0.7rem; letter-spacing:0.06em; color:var(--rust-deep); font-weight:600; margin-top:2px; }
   .t-title{ font-family:var(--font-serif); font-weight:600; font-size:1.15rem; color:var(--rust-deep); margin-top:2px; }
   .t-desc{ margin-top:4px; color:var(--ink-soft); font-size:0.9rem; line-height:1.5; }
   .t-actions{ margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; }
@@ -368,6 +369,56 @@
   .info-list{ text-align:left; margin-top:10px; }
   .info-list li{ list-style:none; padding:10px 0; border-bottom:1px dashed rgba(217,205,190,0.25); color:var(--ink-soft); font-size:0.92rem; line-height:1.5; }
   .info-list li b{ color:var(--ink); font-weight:600; }
+
+  /* Rooms / pricing card */
+  .rooms-card{
+    margin-top:34px; text-align:left;
+    border:1px solid rgba(217,205,190,0.4);
+    border-radius:12px;
+    padding:22px 20px 24px;
+    background:var(--parchment-light);
+  }
+  .rooms-card h3{
+    font-family:var(--font-serif); font-weight:600; color:var(--gold);
+    font-size:1.15rem; text-align:center;
+  }
+  .rooms-card .rooms-sub{
+    display:block; text-align:center; margin-top:6px; margin-bottom:16px;
+    font-family:var(--font-body); font-size:0.72rem; letter-spacing:0.04em; color:var(--cream); opacity:0.8;
+  }
+  .rooms-table-wrap{ overflow-x:auto; }
+  table.rooms-table{
+    width:100%; border-collapse:collapse; font-family:var(--font-body); font-size:0.78rem;
+  }
+  table.rooms-table th{
+    text-align:left; color:var(--gold); font-weight:600; letter-spacing:0.03em;
+    padding:8px 8px; border-bottom:1px solid rgba(217,205,190,0.35); white-space:nowrap;
+  }
+  table.rooms-table td{
+    padding:9px 8px; color:var(--cream); border-bottom:1px solid rgba(217,205,190,0.12);
+    vertical-align:top;
+  }
+  table.rooms-table td.num{ text-align:center; white-space:nowrap; }
+  table.rooms-table td.price{ text-align:right; white-space:nowrap; color:var(--gold); font-weight:600; }
+  .rooms-note{
+    margin-top:14px; font-family:var(--font-serif); font-size:0.82rem; color:var(--cream); opacity:0.85; line-height:1.5;
+  }
+  .reserve-block{
+    margin-top:20px; padding-top:18px; border-top:1px solid rgba(217,205,190,0.25);
+    text-align:center;
+  }
+  .reserve-block p{
+    font-family:var(--font-serif); font-size:0.88rem; color:var(--cream); opacity:0.9; margin-bottom:14px; line-height:1.5;
+  }
+  .reserve-btn{
+    display:inline-block; padding:12px 26px; background:var(--gold); color:var(--parchment-deep);
+    border-radius:6px; text-decoration:none; font-family:var(--font-body); font-weight:600;
+    letter-spacing:0.06em; font-size:0.8rem;
+  }
+  .reserve-phone{
+    display:block; margin-top:12px; font-family:var(--font-body); font-size:0.8rem; color:var(--cream);
+  }
+  .reserve-phone a{ color:var(--gold); text-decoration:none; font-weight:600; }
 
   /* RSVP */
   .rsvp-box{ text-align:left; margin-top:10px; }
@@ -424,6 +475,7 @@
     #site-header{ padding:12px 3vw; }
     .monogram{ font-size:1.6rem; }
     #tab-nav a{ padding:7px 11px; font-size:0.66rem; }
+    table.rooms-table{ font-size:0.7rem; }
   }
 </style>
 </head>
@@ -539,6 +591,7 @@
       <div class="t-item">
         <div class="t-badge"><div class="d">17</div><div class="m">MARS</div></div>
         <div class="t-day">Mercredi soir</div>
+        <div class="t-time">20h00</div>
         <div class="t-title">Soirée Femmes</div>
         <div class="t-desc">Une soirée entre femmes pour ouvrir la semaine tout en douceur.</div>
         <div class="t-actions">
@@ -548,6 +601,7 @@
       <div class="t-item">
         <div class="t-badge"><div class="d">17</div><div class="m">MARS</div></div>
         <div class="t-day">Mercredi soir</div>
+        <div class="t-time">20h00</div>
         <div class="t-title">Soirée Hommes</div>
         <div class="t-desc">Une soirée entre hommes pour ouvrir la semaine tout en douceur.</div>
         <div class="t-actions">
@@ -557,6 +611,7 @@
       <div class="t-item">
         <div class="t-badge"><div class="d">18</div><div class="m">MARS</div></div>
         <div class="t-day">Jeudi</div>
+        <div class="t-time">17h00</div>
         <div class="t-title">Houppa &amp; soirée de mariage</div>
         <div class="t-desc">Le grand jour — Ruben et Victoria se diront « oui » sous la Houppa, suivi de la soirée de mariage.</div>
         <div class="t-actions">
@@ -567,6 +622,7 @@
       <div class="t-item" id="page-pool">
         <div class="t-badge"><div class="d">19</div><div class="m">MARS</div></div>
         <div class="t-day">Vendredi</div>
+        <div class="t-time">13h00</div>
         <div class="t-title">Pool Party</div>
         <div class="t-desc">Farniente, musique et cocktails au bord de la piscine.</div>
         <div class="t-actions">
@@ -576,6 +632,7 @@
       <div class="t-item" id="page-chabbat">
         <div class="t-badge"><div class="d">19</div><div class="m">MARS</div></div>
         <div class="t-day">Vendredi soir</div>
+        <div class="t-time">18h30</div>
         <div class="t-title">Kabbalat Chabbat</div>
         <div class="t-desc">L'entrée dans le chabbat, dans la douceur et la tradition.</div>
         <div class="t-actions">
@@ -585,6 +642,7 @@
       <div class="t-item">
         <div class="t-badge"><div class="d">20</div><div class="m">MARS</div></div>
         <div class="t-day">Samedi midi</div>
+        <div class="t-time">12h30</div>
         <div class="t-title">Déjeuner de Chabbat</div>
         <div class="t-desc">Un déjeuner convivial et sans façon, dans la continuité du Chabbat.</div>
         <div class="t-actions">
@@ -594,6 +652,7 @@
       <div class="t-item">
         <div class="t-badge"><div class="d">20</div><div class="m">MARS</div></div>
         <div class="t-day">Samedi soir</div>
+        <div class="t-time">21h30</div>
         <div class="t-title">Soirée de clôture</div>
         <div class="t-desc">La grande soirée finale, pour clôturer la semaine en beauté.</div>
         <div class="t-actions">
@@ -617,6 +676,44 @@
       <li><b>À prévoir :</b> tenue légère pour la Pool Party, tenue chic pour la Houppa, et tenue de fête pour la soirée de clôture.</li>
       <li><b>Climat :</b> printemps doux et ensoleillé sur la côte atlantique — prévoyez un lainage pour le soir.</li>
     </ul>
+
+    <div class="rooms-card">
+      <h3>Tarifs des chambres — Fairmont Taghazout Bay</h3>
+      <span class="rooms-sub">Séjour du 14 au 21 mars 2027 · 7 nuitées · 80 chambres allouées au maximum</span>
+      <div class="rooms-table-wrap">
+        <table class="rooms-table">
+          <thead>
+            <tr>
+              <th>Catégorie de chambre</th>
+              <th>Unités</th>
+              <th>Tarif / nuit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Chambre Fairmont King Size</td><td class="num">10</td><td class="price">3 350 MAD</td></tr>
+            <tr><td>Chambre Fairmont deux lits Queen</td><td class="num">10</td><td class="price">3 350 MAD</td></tr>
+            <tr><td>Chambre Fairmont Deluxe King Size</td><td class="num">10</td><td class="price">3 550 MAD</td></tr>
+            <tr><td>Chambre Fairmont Deluxe deux lits Queen</td><td class="num">7</td><td class="price">3 550 MAD</td></tr>
+            <tr><td>Chambre Fairmont Deluxe vue sur l'océan, lit King Size</td><td class="num">23</td><td class="price">4 300 MAD</td></tr>
+            <tr><td>Chambre Fairmont Deluxe vue mer, deux lits Queen</td><td class="num">8</td><td class="price">4 900 MAD</td></tr>
+            <tr><td>Suite Fairmont une chambre</td><td class="num">5</td><td class="price">5 800 MAD</td></tr>
+            <tr><td>Suite Fairmont Deluxe une chambre, vue sur l'océan</td><td class="num">2</td><td class="price">8 000 MAD</td></tr>
+            <tr><td>Suite Fairmont Deluxe deux chambres, vue sur l'océan</td><td class="num">1</td><td class="price">10 500 MAD</td></tr>
+            <tr><td>Villa Initiale, deux chambres King Size</td><td class="num">1</td><td class="price">18 000 MAD</td></tr>
+            <tr><td>Villa Aurore, trois chambres King Size</td><td class="num">1</td><td class="price">19 500 MAD</td></tr>
+            <tr><td>Villa Fibule, quatre chambres King Size</td><td class="num">1</td><td class="price">20 700 MAD</td></tr>
+            <tr><td>Villa Saphir, cinq chambres King Size</td><td class="num">1</td><td class="price">29 800 MAD</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="rooms-note">Tarifs par unité et par nuit, en dirhams marocains (MAD), pour un séjour compris entre le 14 et le 21 mars 2027. Le nombre de chambres est limité — nous vous conseillons de réserver dès que possible.</p>
+
+      <div class="reserve-block">
+        <p>Pour réserver votre chambre, écrivez directement à l'hôtel : votre message sera pré-rempli, il ne vous restera qu'à compléter vos dates et vos coordonnées.</p>
+        <a class="reserve-btn" href="mailto:taghazout.reservations@fairmont.com?cc=kezak.reponses@gmail.com&subject=R%C3%A9servation%20chambre%20-%20Mariage%20Ruben%20%26%20Victoria&body=Bonjour%2C%0A%0AJe%20me%20permets%20de%20vous%20%C3%A9crire%20afin%20de%20r%C3%A9server%20une%20chambre%20dans%20le%20cadre%20du%20mariage%20de%20Ruben%20et%20Victoria.%0A%0AVoici%20les%20informations%20n%C3%A9cessaires%20%C3%A0%20la%20r%C3%A9servation%20%3A%0A%0ADate%20d%E2%80%99arriv%C3%A9e%20%3A%20XX%2F03%2F2027%0ADate%20de%20d%C3%A9part%20%3A%20XX%2F03%2F2027%0ANombre%20de%20personnes%20%3A%20%0AType%20de%20chambre%20souhait%C3%A9%20%3A%20%0A%0ANom%20pour%20la%20r%C3%A9servation%20%3A%20%0ANum%C3%A9ro%20de%20t%C3%A9l%C3%A9phone%20%3A%20%0A%0AJe%20vous%20remercie%20par%20avance%20pour%20votre%20retour%20et%20vous%20serais%20reconnaissant(e)%20de%20bien%20vouloir%20me%20confirmer%20la%20disponibilit%C3%A9%20et%20la%20r%C3%A9servation%20de%20la%20chambre.%0A%0ABien%20cordialement%2C">✉️ Réserver ma chambre par e-mail</a>
+        <span class="reserve-phone">Ou par téléphone : <a href="tel:+212528291000">+212 5 28 29 10 00</a></span>
+      </div>
+    </div>
   </div>
 </section>
 
