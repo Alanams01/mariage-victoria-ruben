@@ -437,11 +437,22 @@
   .field label{ display:block; font-family:var(--font-body); font-size:0.74rem; letter-spacing:0.06em; color:var(--ink-soft); font-weight:600; margin-bottom:7px; }
   .row-2{ display:flex; gap:14px; }
   .row-2 .field{ flex:1; }
-  .field input[type=text], .field input[type=number], .field textarea{
+  .field input[type=text], .field input[type=number], .field textarea, .field select{
     width:100%; padding:11px 4px; border:none; border-bottom:1px solid var(--ink-soft);
     background:transparent; font-family:var(--font-serif); font-size:1rem; color:var(--ink);
   }
-  .field input:focus, .field textarea:focus{ outline:none; border-bottom:1.5px solid var(--rust); }
+  .field select{
+    -webkit-appearance:none; -moz-appearance:none; appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z' fill='%23FBF5F2'/></svg>");
+    background-repeat:no-repeat; background-position:right 2px center; background-size:18px;
+    border-radius:0;
+    color:var(--cream);
+  }
+  .field select option{
+    color:var(--ink);
+    background:var(--cream);
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{ outline:none; border-bottom:1.5px solid var(--rust); }
   .field textarea{ resize:vertical; min-height:70px; }
   .radio-row{ display:flex; gap:26px; }
   .radio-opt{ display:flex; align-items:center; gap:7px; font-family:var(--font-serif); font-size:0.95rem; }
@@ -749,12 +760,12 @@
           <label>Présence *</label>
           <div class="radio-row">
             <label class="radio-opt"><input type="radio" name="mairie" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="mairie" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="mairie" value="Non"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="mairie_nb" min="0">
+          <select name="mairie_nb"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
         </div>
       </div>
 
@@ -767,12 +778,12 @@
           <label>Présence *</label>
           <div class="radio-row">
             <label class="radio-opt"><input type="radio" name="welcome" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="welcome" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="welcome" value="Non"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="welcome_nb" min="0">
+          <select name="welcome_nb"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
         </div>
       </div>
 
@@ -783,12 +794,12 @@
           <label>Présence *</label>
           <div class="radio-row">
             <label class="radio-opt"><input type="radio" name="houppa" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="houppa" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="houppa" value="Non"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="houppa_nb" min="0">
+          <select name="houppa_nb"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
         </div>
       </div>
 
@@ -799,12 +810,12 @@
           <label>Présence *</label>
           <div class="radio-row">
             <label class="radio-opt"><input type="radio" name="pool" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="pool" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="pool" value="Non"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="pool_nb" min="0">
+          <select name="pool_nb"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
         </div>
       </div>
 
@@ -815,12 +826,12 @@
           <label>Présence *</label>
           <div class="radio-row">
             <label class="radio-opt"><input type="radio" name="kabbalat" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="kabbalat" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="kabbalat" value="Non"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="kabbalat_nb" min="0">
+          <select name="kabbalat_nb"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
         </div>
       </div>
 
@@ -831,12 +842,12 @@
           <label>Présence *</label>
           <div class="radio-row">
             <label class="radio-opt"><input type="radio" name="chabbat_midi" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="chabbat_midi" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="chabbat_midi" value="Non"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="chabbat_midi_nb" min="0">
+          <select name="chabbat_midi_nb"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
         </div>
       </div>
 
@@ -847,12 +858,12 @@
           <label>Présence *</label>
           <div class="radio-row">
             <label class="radio-opt"><input type="radio" name="cloture" value="Oui" required> Oui</label>
-            <label class="radio-opt"><input type="radio" name="cloture" value="Non avec regrets"> Non avec regrets</label>
+            <label class="radio-opt"><input type="radio" name="cloture" value="Non"> Non avec regrets</label>
           </div>
         </div>
         <div class="field">
           <label>Nombre de personnes</label>
-          <input type="number" name="cloture_nb" min="0">
+          <select name="cloture_nb"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
         </div>
       </div>
 
@@ -950,20 +961,19 @@
     URL.revokeObjectURL(url);
   }
 
-  /* ---------- RSVP : si "Non avec regrets", le champ nombre de personnes se cache et reste à 0 ---------- */
+  /* ---------- RSVP : si "Non avec regrets", le champ nombre de personnes se cache et reste vide ---------- */
   const rsvpEvents = ['mairie','welcome','houppa','pool','kabbalat','chabbat_midi','cloture'];
   rsvpEvents.forEach(function(name){
     const radios = document.querySelectorAll('input[name="'+name+'"]');
-    const nbInput = document.querySelector('input[name="'+name+'_nb"]');
-    const nbField = nbInput ? nbInput.closest('.field') : null;
+    const nbSelect = document.querySelector('select[name="'+name+'_nb"]');
+    const nbField = nbSelect ? nbSelect.closest('.field') : null;
     function toggleNbField(){
       const checked = document.querySelector('input[name="'+name+'"]:checked');
-      if(checked && checked.value === 'Non avec regrets'){
+      if(checked && checked.value === 'Non'){
         if(nbField) nbField.style.display = 'none';
-        if(nbInput) nbInput.value = '0';
+        if(nbSelect) nbSelect.value = '';
       } else {
         if(nbField) nbField.style.display = '';
-        if(nbInput && nbInput.value === '0') nbInput.value = '';
       }
     }
     radios.forEach(function(r){ r.addEventListener('change', toggleNbField); });
@@ -987,8 +997,8 @@
         msg.textContent = 'Merci ! Votre réponse a bien été enregistrée ✨';
         form.reset();
         rsvpEvents.forEach(function(name){
-          const nbInput = document.querySelector('input[name="'+name+'_nb"]');
-          const nbField = nbInput ? nbInput.closest('.field') : null;
+          const nbSelect = document.querySelector('select[name="'+name+'_nb"]');
+          const nbField = nbSelect ? nbSelect.closest('.field') : null;
           if(nbField) nbField.style.display = '';
         });
       })
