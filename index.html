@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Ruben & Victoria — 18 Mars 2027</title>
 <meta name="description" content="Ruben & Victoria se marient à Taghazout. Retrouvez ici toutes les informations pour le mariage et votre séjour.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,7 @@
   button{font-family:inherit; cursor:pointer;}
   .medallion{
     width:56px; height:56px;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='94' fill='none' stroke='%23D9CDBE' stroke-width='1' opacity='0.5'/><polygon points='100.0,12.0 113.8,66.7 162.2,37.8 133.3,86.2 188.0,100.0 133.3,113.8 162.2,162.2 113.8,133.3 100.0,188.0 86.2,133.3 37.8,162.2 66.7,113.8 12.0,100.0 66.7,86.2 37.8,37.8 86.2,66.7' fill='none' stroke='%23C7A0B0' stroke-width='3'/><polygon points='111.3,43.1 113.3,80.0 148.2,67.8 123.5,95.3 156.9,111.3 120.0,113.3 132.2,148.2 104.7,123.5 88.7,156.9 86.7,120.0 51.8,132.2 76.5,104.7 43.1,88.7 80.0,86.7 67.8,51.8 95.3,76.5' fill='none' stroke='%23D9CDBE' stroke-width='2' opacity='0.9'/><circle cx='100' cy='100' r='30' fill='none' stroke='%23B0708A' stroke-width='1.5' opacity='0.75'/><circle cx='100' cy='100' r='6' fill='%23D9CDBE'/><circle cx='100' cy='12' r='3.5' fill='%23B0708A'/><circle cx='188' cy='100' r='3.5' fill='%23B0708A'/><circle cx='100' cy='188' r='3.5' fill='%23B0708A'/><circle cx='12' cy='100' r='3.5' fill='%23B0708A'/></svg>");
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='94' fill='none' stroke='%23D9CDBE' stroke-width='1' opacity='0.5'/><circle cx='100' cy='100' r='30' fill='none' stroke='%23B0708A' stroke-width='1.5' opacity='0.75'/><circle cx='100' cy='100' r='6' fill='%23D9CDBE'/></svg>");
     background-size:contain; background-repeat:no-repeat;
     margin:0 auto;
   }
@@ -171,13 +171,17 @@
     border-bottom:1px solid rgba(217,205,190,0.3);
   }
   .monogram{
-    font-family:var(--font-script);
-    font-size:2rem;
-    color:var(--gold);
-    line-height:1;
+    height:36px;
     flex-shrink:0;
+    display:flex;
+    align-items:center;
   }
-  .monogram span:last-child{ margin-left:-0.55em; opacity:0.65; }
+  .monogram img{
+    height:100%;
+    width:auto;
+    display:block;
+    filter:drop-shadow(0 0 6px rgba(217,205,190,0.25));
+  }
 
   #tab-nav{
     display:flex;
@@ -212,44 +216,6 @@
     color:var(--parchment-deep);
     border-color:var(--gold);
   }
-
-  /* ============ COUNTDOWN / ARCH ============ */
-  #countdown-page{
-    position:relative;
-    padding:60px 6vw 90px;
-    background:var(--parchment-light);
-    text-align:center;
-  }
-  .arch-photo{
-    position:relative;
-    width:min(420px, 88vw);
-    aspect-ratio:3/4;
-    margin:0 auto;
-    border-radius:50% 50% 6px 6px / 30% 30% 6px 6px;
-    background:url('photo-arche.jpeg') center / cover no-repeat,
-               linear-gradient(160deg, #3A3240, #1C1720);
-    box-shadow:0 20px 50px rgba(8,10,22,0.45);
-    overflow:visible;
-  }
-  .countdown{
-    position:relative;
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin-top:-38px;
-  }
-  .cd-box{
-    width:76px; height:76px;
-    border-radius:50%;
-    background:var(--cream);
-    border:1.5px solid var(--gold);
-    display:flex; flex-direction:column;
-    align-items:center; justify-content:center;
-    box-shadow:0 8px 18px rgba(8,10,22,0.35);
-  }
-  .cd-num{ font-family:var(--font-body); font-weight:700; font-size:1.2rem; color:var(--rust-deep); }
-  .cd-label{ font-size:0.56rem; letter-spacing:0.06em; color:var(--ink-soft); margin-top:1px; }
 
   /* ============ PAGES ============ */
   .page{
@@ -309,18 +275,22 @@
   .divider-soft{ width:56px; height:1px; background:var(--gold); margin:28px auto; opacity:0.8; }
 
   /* Ceremony blocks (Mairie + Houppa share this look) */
-  .hebrew-line{
+  .hebrew-arc{
+    margin:36px auto 8px;
+    width:min(300px, 78vw);
+  }
+  .hebrew-arc svg{ display:block; width:100%; height:auto; }
+  .hebrew-arc text{
     font-family:var(--font-serif);
-    font-size:1.05rem;
-    color:var(--ink);
-    direction:rtl;
-    margin:18px 0 8px;
+    font-size:15px;
+    fill:var(--ink);
   }
   .ceremony-monogram{
-    font-family:var(--font-script);
-    font-size:2.4rem;
-    color:var(--rust-deep);
     margin:16px 0;
+  }
+  .ceremony-monogram img{
+    height:64px;
+    width:auto;
   }
   .parents-row{
     display:flex; justify-content:space-between;
@@ -328,11 +298,6 @@
     font-family:var(--font-serif);
     font-size:0.92rem;
     color:var(--ink-soft);
-  }
-  .hebrew-names{
-    display:flex; justify-content:space-between;
-    margin-top:8px; font-size:1.1rem; direction:rtl;
-    font-family:var(--font-serif); color:var(--ink);
   }
   .names-pair{
     display:flex; justify-content:center;
@@ -344,12 +309,21 @@
     margin-top:4px; font-family:var(--font-serif); font-size:1rem; color:var(--ink-soft);
   }
   .names-pair .name-col .heb-sub .heb-script{ direction:rtl; display:inline-block; margin-left:6px; }
-  .placeholder-note{
-    margin-top:10px;
-    font-size:0.72rem;
-    color:var(--ink-soft);
-    font-style:italic;
-    opacity:0.75;
+
+  /* Grands-parents / mémoire */
+  .memory-block{ margin-top:30px; }
+  .memory-title{
+    font-family:var(--font-body); font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    font-size:0.78rem; color:var(--rust-deep); margin-bottom:14px;
+  }
+  .memory-columns{
+    display:flex; justify-content:center; gap:40px;
+    font-family:var(--font-serif); color:var(--ink); font-size:0.95rem; line-height:1.7;
+  }
+  .memory-columns .col{ flex:1; max-width:220px; }
+  .memory-columns .col .col-label{
+    font-family:var(--font-body); font-weight:600; font-size:0.68rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--ink-soft); margin-bottom:6px; display:block;
   }
 
   /* Timeline (Programme) */
@@ -395,24 +369,6 @@
   .rooms-card .rooms-sub{
     display:block; text-align:center; margin-top:6px; margin-bottom:16px;
     font-family:var(--font-body); font-size:0.72rem; letter-spacing:0.04em; color:var(--cream); opacity:0.8;
-  }
-  .rooms-table-wrap{ overflow-x:auto; }
-  table.rooms-table{
-    width:100%; border-collapse:collapse; font-family:var(--font-body); font-size:0.78rem;
-  }
-  table.rooms-table th{
-    text-align:left; color:var(--gold); font-weight:600; letter-spacing:0.03em;
-    padding:8px 8px; border-bottom:1px solid rgba(217,205,190,0.35); white-space:nowrap;
-  }
-  table.rooms-table td{
-    padding:9px 8px; color:var(--cream); border-bottom:1px solid rgba(217,205,190,0.12);
-    vertical-align:top;
-  }
-  table.rooms-table td.num{ text-align:center; white-space:nowrap; }
-  table.rooms-table td.price{ text-align:right; white-space:nowrap; color:var(--gold); font-weight:600; }
-  table.rooms-table td.price .price-eur{ display:block; font-weight:400; font-size:0.85em; color:var(--cream); opacity:0.75; margin-top:1px; }
-  .rooms-note{
-    margin-top:14px; font-family:var(--font-serif); font-size:0.82rem; color:var(--cream); opacity:0.85; line-height:1.5;
   }
   .reserve-block{
     text-align:center;
@@ -492,11 +448,10 @@
   @media (max-width:480px){
     .row-2{ flex-direction:column; gap:0; }
     .parents-row{ flex-direction:column; gap:6px; text-align:center; }
-    .hebrew-names{ flex-direction:column; gap:4px; text-align:center; }
+    .memory-columns{ gap:20px; }
     #site-header{ padding:12px 3vw; }
-    .monogram{ font-size:1.6rem; }
+    .monogram{ height:30px; }
     #tab-nav a{ padding:7px 11px; font-size:0.66rem; }
-    table.rooms-table{ font-size:0.7rem; }
   }
 </style>
 </head>
@@ -509,62 +464,45 @@
   <div class="door door-right"></div>
   <div class="intro-container">
     <h1 class="names">Ruben &amp; Victoria</h1>
-    <p class="tagline">Une histoire de mille et une nuits ✨</p>
-
-    <div class="countdown-container" id="cover-timer">
-      <div class="unit"><span class="num" id="cover-days">00</span><span class="lbl">Jours</span></div>
-      <div class="unit"><span class="num" id="cover-hours">00</span><span class="lbl">Heures</span></div>
-      <div class="unit"><span class="num" id="cover-min">00</span><span class="lbl">Min</span></div>
-      <div class="unit"><span class="num" id="cover-sec">00</span><span class="lbl">Sec</span></div>
-    </div>
+    <p class="tagline">Une histoire de mille et une nuits</p>
 
     <div class="date-range">18 MARS 2027</div>
-    <a href="#countdown-page" class="cta">Voir l'invitation</a>
+    <a href="#page-mairie" class="cta">Voir l'invitation</a>
   </div>
 </section>
 
 <!-- ============ HEADER + TAB NAV (top right) ============ -->
 <header id="site-header">
-  <div class="monogram"><span>R</span><span>V</span></div>
+  <div class="monogram"><img src="logo.png" alt="Ruben & Victoria"></div>
   <nav id="tab-nav">
     <a href="#page-mairie" data-section="page-mairie">Mairie</a>
     <a href="#page-programme" data-section="page-programme">Programme</a>
     <a href="#page-infos" data-section="page-infos">Infos</a>
-    <a href="#page-reservations" data-section="page-reservations">Réservations</a>
     <a href="#page-rsvp" data-section="page-rsvp">Réponses</a>
+    <a href="#page-reservations" data-section="page-reservations">Réservations</a>
   </nav>
 </header>
-
-<!-- ============ COUNTDOWN / ARCH ============ -->
-<section id="countdown-page">
-  <div class="arch-photo"></div>
-  <div class="countdown">
-    <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Jours</div></div>
-    <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Heures</div></div>
-    <div class="cd-box"><div class="cd-num" id="cd-min">00</div><div class="cd-label">Minutes</div></div>
-    <div class="cd-box"><div class="cd-num" id="cd-sec">00</div><div class="cd-label">Secondes</div></div>
-  </div>
-</section>
 
 <!-- ============ PAGE: MAIRIE ============ -->
 <section class="page" id="page-mairie">
   <div class="page-inner" style="padding-top:56px;">
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Mairie</div>
-    <div class="ceremony-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
+    <div class="ceremony-monogram"><img src="logo.png" alt="Ruben & Victoria"></div>
     <div class="parents-row">
-      <div>Raphaël &amp; Corine<br>Attar</div>
-      <div>Xavier &amp; Véronique<br>Nadjar</div>
+      <div>Attar</div>
+      <div>Nadjar</div>
     </div>
     <div class="page-body">Ont la joie de vous convier à l'union civile de leurs enfants</div>
     <div class="page-script" style="margin-top:10px;">Ruben &amp; Victoria</div>
     <div class="page-body" style="margin-top:18px;">Qui se diront « oui » à la mairie</div>
-    <div class="page-date">le jeudi 4 mars 2027<br>à 14h00</div>
+    <div class="page-date">le lundi 1er mars 2027<br>à 13h00</div>
     <div class="page-place">Mairie de Neuilly-sur-Seine</div>
     <div class="page-address">96 avenue Achille-Peretti<br>92200 Neuilly-sur-Seine</div>
     <a class="itin-btn" target="_blank" href="https://waze.com/ul?q=Mairie%20de%20Neuilly-sur-Seine%2C%2096%20avenue%20Achille%20Peretti%2C%2092200%20Neuilly-sur-Seine&navigate=yes">Itinéraire</a>
     <div class="divider-soft"></div>
-    <div class="page-body">Suivie d'une bénédiction à la synagogue — lieu communiqué très prochainement.</div>
+    <div class="page-body">After dès 15h00 à Neuilly-sur-Seine — lieu communiqué très prochainement.</div>
+    <div class="page-body" style="margin-top:10px;">Suivie d'une bénédiction à la synagogue — lieu communiqué très prochainement.</div>
   </div>
 </section>
 
@@ -588,27 +526,50 @@
   <div class="page-inner" style="padding-top:56px;">
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Houppa</div>
-    <div class="hebrew-line">קול ששון וקול שמחה קול חתן וקול כלה</div>
-    <div class="ceremony-monogram"><span>R</span><span style="margin-left:-0.5em; opacity:0.65;">V</span></div>
+
+    <div class="hebrew-arc">
+      <svg viewBox="0 0 300 70">
+        <path id="hebrew-arc-path" d="M 15,65 A 220,220 0 0 1 285,65" fill="none"/>
+        <text text-anchor="middle">
+          <textPath href="#hebrew-arc-path" startOffset="50%">קול ששון וקול שמחה קול חתן וקול כלה</textPath>
+        </text>
+      </svg>
+    </div>
+
+    <div class="ceremony-monogram"><img src="logo.png" alt="Ruben & Victoria"></div>
     <div class="parents-row">
-      <div>Raphaël &amp; Corine<br>Attar</div>
-      <div>Xavier &amp; Véronique<br>Nadjar</div>
+      <div>Véronique &amp; Xavier Nadjar<br>et mes grands-mères<br>Joelle Nadjar et Josette Meyer</div>
+      <div>Corine &amp; Raphaël Attar<br>et ses grands-parents<br>Simone et Baruk Benwaiche</div>
     </div>
     <div class="page-body">Ont la joie de vous faire part du mariage de leurs enfants</div>
     <div class="names-pair">
       <div class="name-col">
         <div class="page-script">Ruben</div>
-        <div class="heb-sub">ראובן</span></div>
+        <div class="heb-sub"><span class="heb-script">ראובן</span></div>
       </div>
       <div class="name-col">
         <div class="page-script">Victoria</div>
-        <div class="heb-sub">אסתר</span></div>
+        <div class="heb-sub"><span class="heb-script">אסתר</span></div>
       </div>
     </div>
+
     <div class="page-body" style="margin-top:18px;">Et seraient honorés de votre présence à la cérémonie religieuse qui aura lieu</div>
     <div class="page-date">le jeudi 18 mars 2027<br>à 17h00</div>
     <div class="page-place">Fairmont Taghazout Bay</div>
-    <a class="itin-btn" target="_blank" href="https://waze.com/ul?q=Fairmont%20Taghazout%20Bay%2C%20Taghazout%2C%20Maroc&navigate=yes">Itinéraire</a>
+
+    <div class="memory-block">
+      <div class="memory-title">Une pensée pour ceux qui sont partis</div>
+      <div class="memory-columns">
+        <div class="col">
+          <span class="col-label">Victoria</span>
+          Papi Victor<br>Papi Marc
+        </div>
+        <div class="col">
+          <span class="col-label">Ruben</span>
+          Papi Baruk<br>Mamie Messodi
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -690,21 +651,12 @@
     <div class="page-script">Infos pratiques</div>
     <div class="page-place" style="margin-top:24px; font-weight:600;">Fairmont Taghazout Bay</div>
     <div class="page-address">Baie de Taghazout, région d'Agadir, Maroc</div>
-    <a class="itin-btn outline" target="_blank" href="https://waze.com/ul?q=Fairmont%20Taghazout%20Bay%2C%20Taghazout%2C%20Maroc&navigate=yes">Itinéraire</a>
     <ul class="info-list">
       <li><b>Aéroport :</b> Agadir–Al Massira (AGA), à environ 30 minutes de l'hôtel.</li>
       <li><b>Sur place :</b> quatre jours au Fairmont Taghazout Bay, du 17 au 21 mars 2027.</li>
       <li><b>À prévoir :</b> tenue légère & maillot de bain pour la Pool Party, tenue chic pour la Houppa, et tenue de fête pour la soirée de clôture.</li>
       <li><b>Climat :</b> printemps doux et ensoleillé sur la côte atlantique — prévoyez un lainage pour le soir.</li>
     </ul>
-
-    <div class="rooms-card" id="page-reservations" style="scroll-margin-top:80px;">
-      <div class="reserve-block">
-        <p>Pour réserver votre chambre, écrivez directement à l'hôtel : votre message sera pré-rempli, il ne vous restera qu'à compléter vos dates et vos coordonnées.</p>
-        <a class="reserve-btn" href="mailto:taghazout.reservations@fairmont.com?cc=kezak.reponses@gmail.com&subject=R%C3%A9servation%20chambre%20-%20Mariage%20Ruben%20%26%20Victoria&body=Bonjour%2C%0A%0AJe%20me%20permets%20de%20vous%20%C3%A9crire%20afin%20de%20r%C3%A9server%20une%20chambre%20dans%20le%20cadre%20du%20mariage%20de%20Ruben%20et%20Victoria.%0A%0AVoici%20les%20informations%20n%C3%A9cessaires%20%C3%A0%20la%20r%C3%A9servation%20%3A%0A%0ADate%20d%E2%80%99arriv%C3%A9e%20%3A%20XX%2F03%2F2027%0ADate%20de%20d%C3%A9part%20%3A%20XX%2F03%2F2027%0ANombre%20de%20personnes%20%3A%20%0AType%20de%20chambre%20souhait%C3%A9%20%3A%20%0A%0ANom%20pour%20la%20r%C3%A9servation%20%3A%20%0ANum%C3%A9ro%20de%20t%C3%A9l%C3%A9phone%20%3A%20%0A%0AJe%20vous%20remercie%20par%20avance%20pour%20votre%20retour%20et%20vous%20serais%20reconnaissant(e)%20de%20bien%20vouloir%20me%20confirmer%20la%20disponibilit%C3%A9%20et%20la%20r%C3%A9servation%20de%20la%20chambre.%0A%0ABien%20cordialement%2C">✉️ Réserver ma chambre par e-mail</a>
-        <span class="reserve-phone">Ou par téléphone : <a href="tel:+212528291000">+212 5 28 29 10 00</a></span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -724,7 +676,7 @@
       <div class="rsvp-section-title">Mairie</div>
       <div class="event-block">
         <h4>Mairie</h4>
-        <span class="event-sub">Jeudi 4 mars 2027 — 14h00</span>
+        <span class="event-sub">Lundi 1er mars 2027 — 13h00</span>
         <div class="field">
           <label>Présence *</label>
           <div class="radio-row">
@@ -847,6 +799,20 @@
   </div>
 </section>
 
+<!-- ============ PAGE: RESERVATIONS ============ -->
+<section class="page" id="page-reservations">
+  <div class="page-inner">
+    <div class="page-script">Réservations</div>
+    <div class="rooms-card" style="margin-top:24px;">
+      <div class="reserve-block">
+        <p>Pour réserver votre chambre, écrivez directement à l'hôtel : votre message sera pré-rempli, il ne vous restera qu'à compléter vos dates et vos coordonnées.</p>
+        <a class="reserve-btn" href="mailto:taghazout.reservations@fairmont.com?cc=kezak.reponses@gmail.com&subject=R%C3%A9servation%20chambre%20-%20Mariage%20Ruben%20%26%20Victoria&body=Bonjour%2C%0A%0AJe%20me%20permets%20de%20vous%20%C3%A9crire%20afin%20de%20r%C3%A9server%20une%20chambre%20dans%20le%20cadre%20du%20mariage%20de%20Ruben%20et%20Victoria.%0A%0AVoici%20les%20informations%20n%C3%A9cessaires%20%C3%A0%20la%20r%C3%A9servation%20%3A%0A%0ADate%20d%E2%80%99arriv%C3%A9e%20%3A%20XX%2F03%2F2027%0ADate%20de%20d%C3%A9part%20%3A%20XX%2F03%2F2027%0ANombre%20de%20personnes%20%3A%20%0AType%20de%20chambre%20souhait%C3%A9%20%3A%20%0A%0ANom%20pour%20la%20r%C3%A9servation%20%3A%20%0ANum%C3%A9ro%20de%20t%C3%A9l%C3%A9phone%20%3A%20%0A%0AJe%20vous%20remercie%20par%20avance%20pour%20votre%20retour%20et%20vous%20serais%20reconnaissant(e)%20de%20bien%20vouloir%20me%20confirmer%20la%20disponibilit%C3%A9%20et%20la%20r%C3%A9servation%20de%20la%20chambre.%0A%0ABien%20cordialement%2C">✉️ Réserver ma chambre par e-mail</a>
+        <span class="reserve-phone">Ou par téléphone : <a href="tel:+212528291000">+212 5 28 29 10 00</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="ornament"><div class="line"></div><div class="medallion"></div><div class="line"></div></div>
 <footer>Ruben &amp; Victoria</footer>
 
@@ -882,33 +848,6 @@
     }, { rootMargin:'-45% 0px -45% 0px', threshold:0 });
     sections.forEach(sec=>observer.observe(sec));
   }
-
-  /* ---------- Countdown : cible Houppa, 18 mars 2027 17h00 (heure de Paris/Maroc) ---------- */
-  const targetDate = new Date('2027-03-18T17:00:00+01:00').getTime();
-  function setText(id, value){
-    const el = document.getElementById(id);
-    if(el) el.textContent = String(value).padStart(2,'0');
-  }
-  function updateCountdown(){
-    const now = new Date().getTime();
-    let diff = targetDate - now;
-    if(diff <= 0){
-      diff = 0;
-      const coverTimer = document.getElementById('cover-timer');
-      if(coverTimer && !coverTimer.dataset.done){
-        coverTimer.dataset.done = '1';
-        coverTimer.innerHTML = '<p style="font-family:\'Great Vibes\',cursive; font-size:2rem; color:#fff;">C\'est le grand jour ✨</p>';
-      }
-    }
-    const days = Math.floor(diff/(1000*60*60*24));
-    const hours = Math.floor((diff/(1000*60*60))%24);
-    const mins = Math.floor((diff/(1000*60))%60);
-    const secs = Math.floor((diff/1000)%60);
-    setText('cd-days', days); setText('cd-hours', hours); setText('cd-min', mins); setText('cd-sec', secs);
-    setText('cover-days', days); setText('cover-hours', hours); setText('cover-min', mins); setText('cover-sec', secs);
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
 
   /* ---------- Ajout au calendrier (.ics) ---------- */
   function addToCalendar(title, description, location, start, end){
@@ -963,7 +902,7 @@
     fetch(SCRIPT_URL, { method:'POST', body: formData })
       .then(()=>{
         msg.className = 'rsvp-msg ok';
-        msg.textContent = 'Merci ! Votre réponse a bien été enregistrée ✨';
+        msg.textContent = 'Merci ! Votre réponse a bien été enregistrée.';
         form.reset();
         rsvpEvents.forEach(function(name){
           const nbSelect = document.querySelector('select[name="'+name+'_nb"]');
