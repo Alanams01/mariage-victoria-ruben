@@ -300,17 +300,26 @@
     color:var(--ink-soft);
   }
   .families-row{
-    display:flex; justify-content:center; align-items:stretch;
-    gap:0; margin-top:22px;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:stretch;
+    column-gap:14px;
+    margin-top:22px;
+    max-width:460px;
+    margin-left:auto; margin-right:auto;
   }
   .families-row .fam-col{
-    flex:1; max-width:220px;
-    padding:0 18px;
+    min-width:0;
+    padding:0 6px;
     font-family:var(--font-serif);
     font-size:0.92rem;
-    line-height:1.7;
+    line-height:1.6;
     color:var(--ink-soft);
+    text-align:center;
+    overflow-wrap:break-word;
   }
+  .families-row .fam-col:first-child{ text-align:right; }
+  .families-row .fam-col:last-child{ text-align:left; }
   .families-row .fam-label{
     display:block;
     font-family:var(--font-body); font-weight:600; letter-spacing:0.1em;
@@ -318,7 +327,7 @@
     margin-bottom:10px;
   }
   .families-row .fam-divider{
-    width:1px; align-self:stretch;
+    width:1px;
     background:var(--gold); opacity:0.55;
     margin:2px 0;
   }
@@ -471,9 +480,9 @@
   @media (max-width:480px){
     .row-2{ flex-direction:column; gap:0; }
     .parents-row{ flex-direction:column; gap:6px; text-align:center; }
-    .families-row{ flex-direction:column; align-items:center; gap:18px; }
-    .families-row .fam-col{ max-width:280px; padding:0; text-align:center; }
-    .families-row .fam-divider{ width:60px; height:1px; align-self:center; }
+    .families-row{ column-gap:8px; max-width:100%; }
+    .families-row .fam-col{ font-size:0.78rem; padding:0 2px; line-height:1.5; }
+    .families-row .fam-label{ font-size:0.62rem; margin-bottom:6px; }
     .memory-columns{ gap:20px; }
     #site-header{ padding:12px 3vw; }
     .monogram{ height:30px; }
