@@ -348,14 +348,12 @@
     font-family:var(--font-body); font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
     font-size:0.78rem; color:var(--rust-deep); margin-bottom:14px;
   }
-  .memory-columns{
-    display:flex; justify-content:center; gap:40px;
-    font-family:var(--font-serif); color:var(--ink); font-size:0.95rem; line-height:1.7;
+  .memory-line{
+    font-family:var(--font-serif); color:var(--ink); font-size:0.92rem; line-height:1.6;
   }
-  .memory-columns .col{ flex:1; max-width:220px; }
-  .memory-columns .col .col-label{
+  .memory-line .col-label{
     font-family:var(--font-body); font-weight:600; font-size:0.68rem; letter-spacing:0.08em;
-    text-transform:uppercase; color:var(--ink-soft); margin-bottom:6px; display:block;
+    text-transform:uppercase; color:var(--ink-soft);
   }
 
   /* Timeline (Programme) */
@@ -483,7 +481,6 @@
     .families-row{ column-gap:8px; max-width:100%; }
     .families-row .fam-col{ font-size:0.78rem; padding:0 2px; line-height:1.5; }
     .families-row .fam-label{ font-size:0.62rem; margin-bottom:6px; }
-    .memory-columns{ gap:20px; }
     #site-header{ padding:12px 3vw; }
     .monogram{ height:30px; }
     #tab-nav a{ padding:7px 11px; font-size:0.66rem; }
@@ -595,15 +592,8 @@
 
     <div class="memory-block">
       <div class="memory-title">Une pensée pour ceux qui sont partis</div>
-      <div class="memory-columns">
-        <div class="col">
-          <span class="col-label">Victoria</span>
-          Papi Victor, Papi Marc
-        </div>
-        <div class="col">
-          <span class="col-label">Ruben</span>
-          Papi Baruk, Mamie Messodi
-        </div>
+      <div class="memory-line">
+        <span class="col-label">Victoria</span> — Papi Victor, Papi Marc &nbsp;•&nbsp; <span class="col-label">Ruben</span> — Papi Baruk, Mamie Messodi
       </div>
     </div>
   </div>
