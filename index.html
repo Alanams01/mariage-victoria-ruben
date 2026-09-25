@@ -299,6 +299,29 @@
     font-size:0.92rem;
     color:var(--ink-soft);
   }
+  .families-row{
+    display:flex; justify-content:center; align-items:stretch;
+    gap:0; margin-top:22px;
+  }
+  .families-row .fam-col{
+    flex:1; max-width:220px;
+    padding:0 18px;
+    font-family:var(--font-serif);
+    font-size:0.92rem;
+    line-height:1.7;
+    color:var(--ink-soft);
+  }
+  .families-row .fam-label{
+    display:block;
+    font-family:var(--font-body); font-weight:600; letter-spacing:0.1em;
+    text-transform:uppercase; font-size:0.7rem; color:var(--rust-deep);
+    margin-bottom:10px;
+  }
+  .families-row .fam-divider{
+    width:1px; align-self:stretch;
+    background:var(--gold); opacity:0.55;
+    margin:2px 0;
+  }
   .names-pair{
     display:flex; justify-content:center;
     gap:48px; margin-top:12px;
@@ -448,6 +471,9 @@
   @media (max-width:480px){
     .row-2{ flex-direction:column; gap:0; }
     .parents-row{ flex-direction:column; gap:6px; text-align:center; }
+    .families-row{ flex-direction:column; align-items:center; gap:18px; }
+    .families-row .fam-col{ max-width:280px; padding:0; text-align:center; }
+    .families-row .fam-divider{ width:60px; height:1px; align-self:center; }
     .memory-columns{ gap:20px; }
     #site-header{ padding:12px 3vw; }
     .monogram{ height:30px; }
@@ -489,13 +515,7 @@
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Mairie</div>
     <div class="ceremony-monogram"><img src="logo.png" alt="Ruben & Victoria"></div>
-    <div class="parents-row">
-      <div>Attar</div>
-      <div>Nadjar</div>
-    </div>
-    <div class="page-body">Ont la joie de vous convier à l'union civile de leurs enfants</div>
-    <div class="page-script" style="margin-top:10px;">Ruben &amp; Victoria</div>
-    <div class="page-body" style="margin-top:18px;">Qui se diront « oui » à la mairie</div>
+    <div class="page-body" style="margin-top:22px;">Victoria &amp; Ruben se diront « oui » à la mairie</div>
     <div class="page-date">le lundi 1er mars 2027<br>à 13h00</div>
     <div class="page-place">Mairie de Neuilly-sur-Seine</div>
     <div class="page-address">96 avenue Achille-Peretti<br>92200 Neuilly-sur-Seine</div>
@@ -537,9 +557,16 @@
     </div>
 
     <div class="ceremony-monogram"><img src="logo.png" alt="Ruben & Victoria"></div>
-    <div class="parents-row">
-      <div>Véronique &amp; Xavier Nadjar<br>et mes grands-mères<br>Joelle Nadjar et Josette Meyer</div>
-      <div>Corine &amp; Raphaël Attar<br>et ses grands-parents<br>Simone et Baruk Benwaiche</div>
+    <div class="families-row">
+      <div class="fam-col">
+        <span class="fam-label">Ruben</span>
+        Véronique &amp; Xavier Nadjar<br>et mes grands-mères<br>Joelle Nadjar et Josette Meyer
+      </div>
+      <div class="fam-divider"></div>
+      <div class="fam-col">
+        <span class="fam-label">Victoria</span>
+        Corine &amp; Raphaël Attar<br>et ses grands-parents<br>Simone et Baruk Benwaiche
+      </div>
     </div>
     <div class="page-body">Ont la joie de vous faire part du mariage de leurs enfants</div>
     <div class="names-pair">
