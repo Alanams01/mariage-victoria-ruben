@@ -313,15 +313,16 @@
   .divider-soft{ width:56px; height:1px; background:var(--gold); margin:28px auto; opacity:0.8; }
 
   /* Ceremony blocks (Mairie + Houppa share this look) */
-  .hebrew-arc{
+  .hebrew-line{
     margin:36px auto 8px;
-    width:min(300px, 78vw);
-  }
-  .hebrew-arc svg{ display:block; width:100%; height:auto; }
-  .hebrew-arc text{
+    max-width:min(340px, 84vw);
     font-family:var(--font-serif);
-    font-size:15px;
-    fill:var(--ink);
+    font-size:1.05rem;
+    line-height:1.6;
+    color:var(--ink);
+    direction:rtl;
+    unicode-bidi:isolate;
+    text-align:center;
   }
   .ceremony-monogram{
     margin:16px 0;
@@ -537,7 +538,7 @@
     <p class="tagline">Une histoire de mille et une nuits</p>
 
     <div class="date-range">18 MARS 2027</div>
-    <a href="#page-mairie" class="cta">Voir l'invitation</a>
+    <a href="#countdown-page" class="cta">Voir l'invitation</a>
   </div>
 </section>
 
@@ -601,14 +602,7 @@
     <div class="medallion" style="width:64px; height:64px; margin-bottom:18px;"></div>
     <div class="page-script">Houppa</div>
 
-    <div class="hebrew-arc">
-      <svg viewBox="0 0 300 70">
-        <path id="hebrew-arc-path" d="M 15,65 A 220,220 0 0 1 285,65" fill="none"/>
-        <text text-anchor="middle">
-          <textPath href="#hebrew-arc-path" startOffset="50%">קול ששון וקול שמחה קול חתן וקול כלה</textPath>
-        </text>
-      </svg>
-    </div>
+    <div class="hebrew-line">קול ששון וקול שמחה קול חתן וקול כלה</div>
 
     <div class="ceremony-monogram"><img src="logo.png" alt="Victoria & Ruben"></div>
     <div class="families-row">
